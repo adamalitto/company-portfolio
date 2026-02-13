@@ -546,6 +546,14 @@ a {
   background: linear-gradient(140deg, #3a2b1f, #886240 48%, #d1a26e 100%);
 }
 
+.art-f {
+  background: linear-gradient(140deg, #25354f, #4f7fb8 48%, #9dc8f0 100%);
+}
+
+.art-g {
+  background: linear-gradient(140deg, #1d3b3d, #2f7f7b 48%, #84d4b0 100%);
+}
+
 .project-copy {
   padding: 1rem;
 }

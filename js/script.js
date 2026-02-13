@@ -68,7 +68,6 @@
     timelineTitle: "Project timeline",
     mediaPhotosTitle: "Project photos",
     mediaVideoTitle: "Project video",
-    mediaAudioTitle: "Project audio briefing",
     previousProject: "Previous project",
     nextProject: "Next project",
     phase1Label: "Phase 1",
@@ -84,6 +83,10 @@
     project4Body: "Corridor reconstruction package with safety upgrades and drainage redesign.",
     project5Title: "Logistics Hub Access Roads",
     project5Body: "Industrial access network with heavy-vehicle geometry and staged implementation.",
+    project6Title: "Intercity Bypass Junction Upgrade",
+    project6Body: "Grade-separated interchange concept to reduce freight congestion and improve safety.",
+    project7Title: "Smart Corridor Traffic Modernization",
+    project7Body: "Integrated ITS-ready corridor redesign with staged construction continuity planning.",
     aboutEyebrow: "Company profile",
     aboutTitle: "Engineering discipline with delivery focus",
     aboutBody: "YOL LOYIHA TARAQQIYOT is a transport infrastructure design firm based in Tashkent. Our team combines design precision, local regulatory knowledge, and construction-aware decision making to reduce project risk and increase execution speed.",
@@ -179,7 +182,6 @@
     timelineTitle: "Loyiha jadvali",
     mediaPhotosTitle: "Loyiha suratlari",
     mediaVideoTitle: "Loyiha videosi",
-    mediaAudioTitle: "Loyiha audio sharhi",
     previousProject: "Oldingi loyiha",
     nextProject: "Keyingi loyiha",
     phase1Label: "1-bosqich",
@@ -195,6 +197,10 @@
     project4Body: "Harakat xavfsizligi va drenaj tizimini yangilashni o'z ichiga olgan koridor rekonstruksiya paketi.",
     project5Title: "Logistika markaziga kirish yo'llari",
     project5Body: "Og'ir yuk transporti uchun moslashtirilgan kirish yo'llari va bosqichma-bosqich amalga oshirish rejasi.",
+    project6Title: "Shaharlararo aylanma tugun modernizatsiyasi",
+    project6Body: "Yuk oqimini kamaytirish va xavfsizlikni oshirish uchun ko'p sathli yo'l tuguni konsepsiyasi.",
+    project7Title: "Smart koridor transport modernizatsiyasi",
+    project7Body: "ITS ga tayyor koridor qayta loyihasi va bosqichli qurilish uzluksizligi rejasi.",
     aboutEyebrow: "Kompaniya profili",
     aboutTitle: "Muhandislik intizomi va natijaga yo'naltirilgan yondashuv",
     aboutBody: "YOL LOYIHA TARAQQIYOT - Toshkentda joylashgan transport infratuzilmasini loyihalash kompaniyasi. Jamoamiz loyihalash aniqligi, mahalliy me'yorlarni chuqur bilish va qurilish amaliyotini tushunish orqali loyiha xavfini kamaytiradi.",
@@ -290,7 +296,6 @@
     timelineTitle: "График проекта",
     mediaPhotosTitle: "Фотографии проекта",
     mediaVideoTitle: "Видео проекта",
-    mediaAudioTitle: "Аудио-бриф проекта",
     previousProject: "Предыдущий проект",
     nextProject: "Следующий проект",
     phase1Label: "Этап 1",
@@ -306,6 +311,10 @@
     project4Body: "Пакет реконструкции коридора с повышением безопасности и обновлением дренажной системы.",
     project5Title: "Подъездные дороги к логистическому хабу",
     project5Body: "Сеть промышленных подъездов с геометрией под тяжелый транспорт и поэтапной реализацией.",
+    project6Title: "Модернизация узла межгородской объездной дороги",
+    project6Body: "Концепция разноуровневой развязки для снижения грузовой перегрузки и повышения безопасности.",
+    project7Title: "Модернизация smart-транспортного коридора",
+    project7Body: "Редизайн коридора с готовностью к ITS и поэтапной реализацией без остановки движения.",
     aboutEyebrow: "Профиль компании",
     aboutTitle: "Инженерная дисциплина и фокус на результате",
     aboutBody: "YOL LOYIHA TARAQQIYOT - проектная компания в Ташкенте, специализирующаяся на транспортной инфраструктуре. Мы объединяем инженерную точность, знание местных норм и понимание строительной практики.",
@@ -395,6 +404,30 @@ const projectContent = {
       phase1: "Freight movement analysis and terminal interface mapping.",
       phase2: "Access alignment design with heavy-vehicle swept-path validation.",
       phase3: "Documentation issue for implementation and contractor coordination."
+    },
+    "6": {
+      heroTag: "Project 6",
+      title: "Intercity Bypass Junction Upgrade",
+      summary: "Grade-separated interchange modernization for safer and faster freight movement.",
+      description: "This project focuses on redesigning an overloaded bypass node to separate traffic streams and improve operational resilience.",
+      scope: "Interchange geometry redesign, ramp optimization, drainage adjustment, and safety barrier integration.",
+      objective: "Reduce freight congestion and conflict points while preserving corridor throughput during phased implementation.",
+      result: "Prepared a construction-ready package with phased traffic management and risk-controlled execution sequencing.",
+      phase1: "Traffic diagnostics, geometry constraints review, and incident hotspot mapping.",
+      phase2: "Development of grade-separated alternatives and multidisciplinary coordination.",
+      phase3: "Final package delivery with implementation staging and technical supervision guidance."
+    },
+    "7": {
+      heroTag: "Project 7",
+      title: "Smart Corridor Traffic Modernization",
+      summary: "ITS-ready corridor redesign with safety and reliability upgrades.",
+      description: "A modernization program that combines geometric improvements with data-ready infrastructure for future smart traffic control.",
+      scope: "Corridor alignment tuning, junction safety upgrades, utility coordination, and ITS-compatible planning.",
+      objective: "Improve traffic reliability and incident response while keeping staged construction impacts under control.",
+      result: "Delivered a coordinated modernization package enabling phased implementation and future smart-system integration.",
+      phase1: "Baseline traffic and safety performance assessment across priority segments.",
+      phase2: "Option testing for geometry, phasing, and operations resilience.",
+      phase3: "Finalized technical package with implementation governance and monitoring recommendations."
     }
   },
   uz: {
@@ -457,6 +490,30 @@ const projectContent = {
       phase1: "Yuk oqimlari tahlili va terminal interfeyslarini xaritalash.",
       phase2: "Kirish yo'llari yo'nalishini loyihalash va og'ir transport manevrlarini tekshirish.",
       phase3: "Qurilish bosqichi uchun hujjatlarni chiqarish va pudratchi bilan muvofiqlashuv."
+    },
+    "6": {
+      heroTag: "6-loyiha",
+      title: "Shaharlararo aylanma tugun modernizatsiyasi",
+      summary: "Transport xavfsizligi va o'tkazuvchanligini oshirishga qaratilgan ko'p sathli tugun yechimi.",
+      description: "Ushbu loyiha yuklama yuqori bo'lgan aylanma tugunni qayta tashkil qilish orqali oqimlar to'qnashuvini kamaytirishga qaratilgan.",
+      scope: "Tugun geometriyasi, panduslar optimallashtiruvi, drenaj yangilanishi va xavfsizlik to'siqlari integratsiyasi.",
+      objective: "Bosqichma-bosqich qurilishda koridor o'tkazuvchanligini saqlagan holda tirbandlikni kamaytirish.",
+      result: "Qurilishga tayyor hujjatlar to'plami va bosqichli harakat boshqaruvi rejasi ishlab chiqildi.",
+      phase1: "Transport diagnostikasi va xavfli nuqtalarni xaritalash.",
+      phase2: "Ko'p sathli yechimlar ishlab chiqish va mutaxassisliklararo muvofiqlashtirish.",
+      phase3: "Yakuniy hujjatlar va amalga oshirish bo'yicha texnik kuzatuv ko'rsatmalari."
+    },
+    "7": {
+      heroTag: "7-loyiha",
+      title: "Smart koridor transport modernizatsiyasi",
+      summary: "ITS ga tayyor koridor qayta loyihasi va xavfsizlik modernizatsiyasi.",
+      description: "Mazkur dastur geometriya yaxshilanishlari va kelajakdagi smart boshqaruv tizimlari uchun tayyor infratuzilmani birlashtiradi.",
+      scope: "Koridor geometriyasini moslashtirish, tugun xavfsizligini oshirish, kommunikatsiyalar bilan muvofiqlashtirish.",
+      objective: "Harakat barqarorligi va hodisalarga javob tezligini oshirish.",
+      result: "Bosqichli amalga oshirish va keyingi smart tizimlar integratsiyasiga mos hujjatlar to'plami tayyorlandi.",
+      phase1: "Asosiy uchastkalarda transport va xavfsizlik holatini baholash.",
+      phase2: "Geometriya va bosqichlash variantlarini sinovdan o'tkazish.",
+      phase3: "Yakuniy texnik paket va monitoring bo'yicha tavsiyalarni topshirish."
     }
   },
   ru: {
@@ -519,6 +576,30 @@ const projectContent = {
       phase1: "Анализ грузовых потоков и интерфейсов с терминальной зоной.",
       phase2: "Проектирование трасс с проверкой маневров тяжелых ТС.",
       phase3: "Выпуск документов для реализации и координация с подрядчиком."
+    },
+    "6": {
+      heroTag: "Проект 6",
+      title: "Модернизация узла межгородской объездной дороги",
+      summary: "Разноуровневая развязка для снижения грузовой перегрузки и повышения безопасности.",
+      description: "Проект направлен на переработку перегруженного узла объездной дороги с разделением потоков и повышением устойчивости движения.",
+      scope: "Перепроектирование геометрии развязки, оптимизация съездов, корректировка дренажа и интеграция барьерных ограждений.",
+      objective: "Снизить заторы и конфликтные точки без потери пропускной способности в поэтапной реализации.",
+      result: "Подготовлен строительный пакет с фазированным управлением движением и контролем рисков.",
+      phase1: "Транспортная диагностика, анализ ограничений геометрии и картирование аварийных зон.",
+      phase2: "Разработка разноуровневых вариантов и междисциплинарная координация.",
+      phase3: "Финализация пакета и рекомендации по техническому сопровождению внедрения."
+    },
+    "7": {
+      heroTag: "Проект 7",
+      title: "Модернизация smart-транспортного коридора",
+      summary: "Редизайн коридора с готовностью к ITS и повышением надежности движения.",
+      description: "Программа модернизации объединяет геометрические улучшения с инфраструктурой, подготовленной к интеллектуальному управлению трафиком.",
+      scope: "Адаптация геометрии коридора, повышение безопасности узлов, координация инженерных сетей и ITS-совместимое планирование.",
+      objective: "Повысить стабильность движения и ускорить реагирование на инциденты.",
+      result: "Сформирован согласованный пакет модернизации для поэтапной реализации и последующей интеграции smart-систем.",
+      phase1: "Оценка базовых транспортных и safety-показателей на приоритетных участках.",
+      phase2: "Тестирование вариантов геометрии, этапности и операционной устойчивости.",
+      phase3: "Выпуск итогового пакета и рекомендаций по мониторингу реализации."
     }
   }
 };
@@ -674,7 +755,7 @@ function initContentProtection() {
 
   document.addEventListener("dragstart", (event) => {
     const target = event.target;
-    if (target && (target.closest("img") || target.closest("video") || target.closest("audio"))) {
+    if (target && (target.closest("img") || target.closest("video"))) {
       event.preventDefault();
     }
   });
@@ -746,7 +827,7 @@ function initMediaFallbacks() {
   const mediaCards = Array.from(document.querySelectorAll(".project-media-stack .media-card"));
   if (mediaCards.length) {
     mediaCards.forEach((card) => {
-      const media = card.querySelector("video, audio");
+      const media = card.querySelector("video");
       if (!media) return;
       media.addEventListener("error", () => {
         card.style.display = "none";
