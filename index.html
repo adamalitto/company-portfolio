@@ -262,20 +262,26 @@
           </ul>
         </div>
 
-        <form class="contact-form" action="#" method="post" aria-label="Contact form">
+        <form class="contact-form" action="#" method="post" aria-label="Contact form" novalidate>
           <label>
             <span data-lang="formName">Full name</span>
-            <input type="text" name="name" required>
+            <input type="text" name="name" minlength="2" maxlength="100" autocomplete="name" required>
           </label>
           <label>
             <span data-lang="formEmail">Work email</span>
-            <input type="email" name="email" required>
+            <input type="email" name="email" maxlength="254" inputmode="email" autocomplete="email" required>
           </label>
           <label>
             <span data-lang="formMessage">Project details</span>
-            <textarea name="message" rows="4" required></textarea>
+            <textarea name="message" rows="4" minlength="10" maxlength="2500" required></textarea>
           </label>
+          <label class="bot-trap" aria-hidden="true">
+            <span>Leave this field empty</span>
+            <input type="text" name="website" tabindex="-1" autocomplete="off">
+          </label>
+          <input type="hidden" name="form_rendered_at" value="">
           <button class="btn btn-primary" type="submit" data-lang="formSubmit">Send request</button>
+          <p class="form-note" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>

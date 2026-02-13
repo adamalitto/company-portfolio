@@ -1,0 +1,4 @@
+Contact: mailto:info@yolloyiha.uz
+Preferred-Languages: en, ru, uz
+Policy: https://github.com/adamalitto/company-portfolio/blob/main/SECURITY.md
+Expires: 2027-02-13T00:00:00.000Z

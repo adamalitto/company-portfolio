@@ -782,6 +782,76 @@ function initReveal() {
   nodes.forEach((node) => node.classList.add("visible"));
 }
 
+function initContactFormShield() {
+  const forms = document.querySelectorAll(".contact-form");
+  if (!forms.length) return;
+
+  const now = Date.now();
+
+  forms.forEach((form) => {
+    const renderedAtInput = form.querySelector("input[name='form_rendered_at']");
+    const botField = form.querySelector("input[name='website']");
+    const statusNode = form.querySelector(".form-note");
+
+    if (renderedAtInput) {
+      renderedAtInput.value = String(now);
+    }
+
+    form.addEventListener("submit", (event) => {
+      const submittedAt = Date.now();
+      const renderedAt = renderedAtInput ? Number(renderedAtInput.value || 0) : submittedAt;
+      const elapsedMs = submittedAt - renderedAt;
+      const lastSubmit = Number(window.localStorage.getItem("last_contact_submit_at") || 0);
+
+      if (statusNode) {
+        statusNode.textContent = "";
+      }
+
+      // Common bot signal: hidden field unexpectedly filled.
+      if (botField && botField.value.trim()) {
+        event.preventDefault();
+        return;
+      }
+
+      // Blocks ultra-fast automation and stale replay attempts.
+      if (elapsedMs < 3000 || elapsedMs > 3600000) {
+        event.preventDefault();
+        if (statusNode) {
+          statusNode.textContent = "Please wait a few seconds and try again.";
+        }
+        return;
+      }
+
+      // Light client-side throttle for repeated submissions.
+      if (lastSubmit && submittedAt - lastSubmit < 30000) {
+        event.preventDefault();
+        if (statusNode) {
+          statusNode.textContent = "Please wait 30 seconds before sending another request.";
+        }
+        return;
+      }
+
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        if (statusNode) {
+          statusNode.textContent = "Please fill all required fields correctly.";
+        }
+        return;
+      }
+
+      window.localStorage.setItem("last_contact_submit_at", String(submittedAt));
+
+      const action = (form.getAttribute("action") || "").trim();
+      if (!action || action === "#") {
+        event.preventDefault();
+        if (statusNode) {
+          statusNode.textContent = "Direct form delivery is disabled. Please contact us by email or phone.";
+        }
+      }
+    });
+  });
+}
+
 initLanguage();
 initMenu();
 initYear();
@@ -791,3 +861,4 @@ initWatermark();
 initFrameGuard();
 initMediaFallbacks();
 initReveal();
+initContactFormShield();

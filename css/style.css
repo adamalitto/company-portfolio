@@ -601,6 +601,20 @@ a {
   font-size: 0.9rem;
 }
 
+.bot-trap {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-note {
+  min-height: 1.2rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
 input,
 textarea {
   width: 100%;
