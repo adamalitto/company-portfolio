@@ -1,0 +1,9 @@
+# Require owner review for every change.
+* @adamalitto
+
+# Extra protection for security-critical files.
+SECURITY.md @adamalitto
+vercel.json @adamalitto
+robots.txt @adamalitto
+.well-known/security.txt @adamalitto
+.github/** @adamalitto

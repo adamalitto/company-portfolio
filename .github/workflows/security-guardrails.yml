@@ -1,0 +1,67 @@
+name: Security Guardrails
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  policy-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Enforce static-only architecture and content policy
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          echo "Checking for disallowed backend entrypoints..."
+          if find . -type f \
+            \( -name "*.php" -o -name "*.asp" -o -name "*.aspx" -o -name "*.jsp" -o -name "*.py" -o -name "*.rb" -o -name "*.go" -o -name "*.java" -o -name "*.cs" \) \
+            | grep -q .; then
+            echo "Backend source files are not allowed in this repo."
+            exit 1
+          fi
+
+          echo "Checking for disallowed backend directories..."
+          if find . -type d \
+            \( -name "api" -o -name "backend" -o -name "server" -o -name "functions" \) \
+            | grep -q .; then
+            echo "Backend directories are not allowed."
+            exit 1
+          fi
+
+          echo "Checking for disabled contact forms..."
+          if grep -RIn --include="*.html" "<form\\b" .; then
+            echo "HTML forms are disabled by policy. Use direct email/phone contact only."
+            exit 1
+          fi
+
+          echo "Checking for audio media references..."
+          if grep -RIn --include="*.html" -e "<audio\\b" -e "audio\\.mp3" .; then
+            echo "Audio media is not allowed by policy."
+            exit 1
+          fi
+
+          echo "Checking for insecure http links..."
+          if grep -RIn --include="*.html" --include="*.css" --include="*.js" "http://" .; then
+            echo "Found insecure http:// references."
+            exit 1
+          fi
+
+      - name: Enforce required security headers in vercel.json
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f vercel.json
+          grep -q "Strict-Transport-Security" vercel.json
+          grep -q "Content-Security-Policy" vercel.json
+          grep -q "X-Robots-Tag" vercel.json
+          grep -q "X-Content-Type-Options" vercel.json
+          grep -q "X-Frame-Options" vercel.json
