@@ -582,37 +582,27 @@ a {
   color: var(--brand);
 }
 
-.contact-form {
+.contact-direct {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: rgba(16, 27, 48, 0.85);
   padding: 1rem;
-  display: grid;
+}
+
+.contact-direct h3 {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.contact-direct p {
+  margin-top: 0.55rem;
+  color: var(--muted);
+}
+
+.contact-direct-actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.7rem;
-}
-
-.contact-form label {
-  display: grid;
-  gap: 0.35rem;
-}
-
-.contact-form span {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.bot-trap {
-  position: absolute !important;
-  left: -9999px !important;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
-.form-note {
-  min-height: 1.2rem;
-  color: var(--muted);
-  font-size: 0.82rem;
 }
 
 input,
