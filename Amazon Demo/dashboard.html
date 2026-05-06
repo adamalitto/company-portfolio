@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="relay-screens.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="https://dfz3xbn3chdu5.cloudfront.net/OptimusWebPlatform/img/Relay_Logo._V516635218_.svg" class="optimus-relay-logo__image">
+                <h2>Future Logistics Academy</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="dashboard.html" class="active-page">Dashboard</a></li>
+                    <li><a href="notification.html">Notifications</a></li>
+                    <li><a href="trips.html">Trips</a></li>
+                    <li><a href="loadboard.html">Load Board</a></li>
+                    <li><a href="auctions.html">Auctions</a></li>
+                    <li><a href="equipmentmarketplace.html">Equipment Marketplace</a></li>
+                    <li><a href="contracts.html">Contracts</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle">Managing Resources 
+                            <span class="arrow">&#9660;</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="driverroster.html">Driver Roster</a></li>                            <li><a href="assets.html">Assets</a></li>
+                        </ul>
+                    </li>  
+                    <li><a href="scorecard.html">Scorecard</a></li>
+                    <li><a href="learningcenter.html">Learning Center</a></li>
+                    <li><a href="rewards.html">Rewards</a></li>
+                    <li><a href="payments.html">Payments</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle carrier-accounts-toggle">Carrier Account
+                            <span class="arrow">&#9660;</span>
+                        </a>
+                        <ul class="dropdown-menu carrier-accounts-dropdown">
+                            <li><a href="companyprofile.html">Company Profile</a></li>
+                            <li><a href="documents.html">Documents</a></li>
+                            <li><a href="paymentinfo.html">Payment Info</a></li>
+                            <li><a href="siteusers.html">Site Users</a></li>
+                        </ul>
+                    </li>  
+                </ul>
+            </nav>
+            <footer>
+                <a href="supportcenter.html">Support Center</a><br>
+                <a href="userprofile.html">User Profile</a><br>
+                <a href="userprofile.html#feedback">Give Feedback</a><br>
+                <a href="../index.html">Sign out</a>
+            </footer>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="top-bar-fullwidth">
+                <header class="top-bar">
+                    <div class="breadcrumb-container">
+                        <div class="hamburger-icon" id="hamburger-icon">&#9776;</div>
+                        <div class="breadcrumb">Dashboard</div>
+                    </div>
+                                        <div class="top-icons" aria-label="Header shortcuts">
+                        <span class="relay-header-icon icon-tick" title="Checklist" aria-label="Checklist">&#9745;</span>
+                        <span class="relay-header-icon icon-bell relay-bell-wrap" title="Notifications" aria-label="Notifications">&#128276;<span class="badge-number">233</span></span>
+                        <span class="relay-header-icon icon-help" title="Help" aria-label="Help">?</span>
+                    </div>
+                </header>
+            </div>
+
+            <div class="page-shell">
+            <!-- Release notes Section -->
+                <div class="release-notes" id="dashboard-release-notes">
+                    <div>
+                        <h2 id="dashboard-release-notes-title">Release Notes</h2>
+                        <button id="dashboard-release-notes-close" type="button">Close this message</button>
+                    </div>
+                </div>
+
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                    <h3>Welcome to Amazon Relay!</h3>
+                <div class="welcome-left">
+                    <h2>Invite Your Drivers</h2>
+                    <p>Invite your drivers: You must have at least one active driver in your roster to receive new trips.</p>
+                    <button class="add-driver-btn">Add driver</button>
+                </div>
+                <div class="welcome-right">
+                    <h2>Manage Site Users</h2>
+                    <p>Give your employees access to Amazon Relay and choose who should receive important updates via email.</p>
+                    <button class="add-user-btn">Add user</button>
+                </div>
+            </div>
+
+            <!-- Trips and Load Board Section -->
+            <div class="dashboard-grid">
+                <div class="trips-section">
+                    <h2>Trips Needing Attention</h2>
+                    <div class="trip-columns">
+                        <div class="trip-column">
+                            <h3>Upcoming</h3>
+                            <p id="dashboard-attention-upcoming">0</p>
+                            <button type="button" id="dashboard-view-upcoming">View</button>
+                        </div>
+                        <div class="trip-column">
+                            <h3>In Transit</h3>
+                            <p id="dashboard-attention-in-transit">0</p>
+                            <button type="button" id="dashboard-view-in-transit">View</button>
+                        </div>
+                        <div class="trip-column">
+                            <h3>History</h3>
+                            <p id="dashboard-attention-history">0</p>
+                            <button type="button" id="dashboard-view-history">View</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="load-board">
+                    <h2>Load Board</h2>
+                    <div class="load-board-content">
+                        <div class="location">BWI - Baltimore, MD</div>
+                        <div class="count" id="dashboard-baltimore-load-count">100</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance and Payments Section -->
+            <div class="performance-payments-section">
+                <div class="performance">
+                    <h2>Overall Performance</h2>
+                    <p id="dashboard-performance-window">Last 6 active weeks</p>
+                    <h3 id="dashboard-overall-score">Overall Score: A+ 100.0%</h3>
+                    <p><button id="dashboard-on-time-score" type="button">On time: 100.0%</button></p>
+                    <p><button id="dashboard-acceptance-score" type="button">Acceptance: 100.0%</button></p>
+                    <p><button id="dashboard-app-usage-score" type="button">App Usage: 100.0%</button></p>
+                    <p><button id="dashboard-disruption-free-score" type="button">Disruption-free: 100.0%</button></p>
+                </div>
+
+                <div class="payments">
+                    <h2>Payments</h2>
+                    <p id="dashboard-payments-window" class="tiny muted">Last 6 months payments</p>
+                    <p id="dashboard-payments-ytd" class="total">-- <span>(YTD Gross)</span></p>
+                    <p id="dashboard-payments-net-balance" class="net-balance">$0.00 (Net Balance)</p>
+                    <canvas id="paymentsChart"></canvas>
+                </div>
+            </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script src="payment-schedule.js"></script>
+    <script src="trip-history-schedule.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="ai-teacher.js"></script>
+
+</html>
+
+
+

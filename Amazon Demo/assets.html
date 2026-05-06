@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assets</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="relay-screens.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="https://dfz3xbn3chdu5.cloudfront.net/OptimusWebPlatform/img/Relay_Logo._V516635218_.svg" class="optimus-relay-logo__image" alt="Relay logo">
+                <h2>Future Logistics Academy</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="notification.html">Notifications</a></li>
+                    <li><a href="trips.html">Trips</a></li>
+                    <li><a href="loadboard.html">Load Board</a></li>
+                    <li><a href="auctions.html">Auctions</a></li>
+                    <li><a href="equipmentmarketplace.html">Equipment Marketplace</a></li>
+                    <li><a href="contracts.html">Contracts</a></li>
+                    <li class="dropdown active">
+                        <a href="javascript:void(0)" class="dropdown-toggle">Managing Resources
+                            <span class="arrow">&#9660;</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="driverroster.html">Driver Roster</a></li>
+                            <li><a href="assets.html" class="active-page">Assets</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="scorecard.html">Scorecard</a></li>
+                    <li><a href="learningcenter.html">Learning Center</a></li>
+                    <li><a href="rewards.html">Rewards</a></li>
+                    <li><a href="payments.html">Payments</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle carrier-accounts-toggle">Carrier Account
+                            <span class="arrow">&#9660;</span>
+                        </a>
+                        <ul class="dropdown-menu carrier-accounts-dropdown">
+                            <li><a href="companyprofile.html">Company Profile</a></li>
+                            <li><a href="documents.html">Documents</a></li>
+                            <li><a href="paymentinfo.html">Payment Info</a></li>
+                            <li><a href="siteusers.html">Site Users</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <footer>
+                <a href="supportcenter.html">Support Center</a>
+                <a href="userprofile.html">User Profile</a>
+                <a href="userprofile.html#feedback">Give Feedback</a>
+                <a href="../index.html">Sign out</a>
+            </footer>
+        </aside>
+
+        <main class="main-content assets-page">
+            <div class="top-bar-fullwidth">
+                <header class="top-bar">
+                    <div class="breadcrumb-container">
+                        <div class="hamburger-icon" id="hamburger-icon">&#9776;</div>
+                        <div class="breadcrumb">Dashboard / Assets</div>
+                    </div>
+                                        <div class="top-icons" aria-label="Header shortcuts">
+                        <span class="relay-header-icon icon-tick" title="Checklist" aria-label="Checklist">&#9745;</span>
+                        <span class="relay-header-icon icon-bell relay-bell-wrap" title="Notifications" aria-label="Notifications">&#128276;<span class="badge-number">233</span></span>
+                        <span class="relay-header-icon icon-help" title="Help" aria-label="Help">?</span>
+                    </div>
+                </header>
+                <div class="trips-header">
+                    <h1>Assets</h1>
+                </div>
+            </div>
+
+            <div class="page-shell">
+                <div class="assets-review-banner is-hidden" id="assets-review-banner" role="status" aria-live="polite">
+                    <span id="assets-review-message">The temporary asset is under review.</span>
+                    <button class="assets-review-close" id="assets-review-close" type="button" aria-label="Close temporary asset review message">&times;</button>
+                </div>
+                <section class="card assets-card">
+                    <div class="card-body">
+                        <div class="assets-toolbar-row">
+                            <div class="assets-toolbar-meta">
+                                <a href="#" class="assets-faq-link">Assets FAQs</a>
+                                <span class="assets-meta-divider">|</span>
+                                <span class="assets-meta-text">Temporary Assets: <strong id="assets-temporary-count">0/15</strong></span>
+                            </div>
+                            <div class="assets-toolbar-actions">
+                                <button id="assets-import-button" type="button" class="btn btn-ghost">&#8682; Import assets</button>
+                                <button id="assets-add-button" type="button" class="btn btn-primary">&#8853; Add asset</button>
+                            </div>
+                        </div>
+
+                        <div class="assets-filter-grid">
+                            <div class="assets-search-field">
+                                <input id="assets-search-input" type="search" placeholder="Search for unit, license, VIN, ...">
+                                <button type="button" class="assets-search-btn" aria-label="Search">&#128269;</button>
+                            </div>
+                            <select id="assets-verification-filter">
+                                <option>Verification status</option>
+                                <option>Verified</option>
+                                <option>Pending verification</option>
+                            </select>
+                            <select id="assets-compliance-filter">
+                                <option>California compliance</option>
+                                <option>CTC compliant</option>
+                                <option>Not compliant</option>
+                            </select>
+                        </div>
+
+                        <p class="assets-results-count">1-15 of 15 results</p>
+                        <div class="inline-note assets-inline-note">
+                            Right now, only tractors and box trucks can be added to your Relay Asset Roster. Trailers do not need to be verified at this time.
+                        </div>
+
+                        <div class="assets-table-wrap">
+                            <table class="data-table assets-table">
+                                <thead>
+                                    <tr>
+                                        <th>Unit #</th>
+                                        <th>Type</th>
+                                        <th>Make</th>
+                                        <th>Fuel</th>
+                                        <th>Model year</th>
+                                        <th>License plate</th>
+                                        <th>VIN</th>
+                                        <th>Verification status</th>
+                                        <th>California compliance</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="assets-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div class="overlay assets-temporary-overlay" id="assets-temporary-overlay" aria-hidden="true">
+        <div class="assets-temporary-modal" role="dialog" aria-modal="true" aria-labelledby="assets-temporary-title">
+            <div class="assets-temporary-modal-head">
+                <h2 id="assets-temporary-title">Add temporary asset for Unit <span id="assets-temporary-unit-head">504</span></h2>
+                <button id="assets-temporary-close" class="close-x" type="button" aria-label="Close add temporary asset modal">&times;</button>
+            </div>
+            <div class="assets-temporary-modal-body">
+                <h3>Add temporary asset for Unit <span id="assets-temporary-unit-body">504</span></h3>
+                <p>Temporary assets can be assigned to trips right away while standard verification is in progress. You'll still need to provide compliance documentation for trucks operating in California on your Documents page.</p>
+                <div class="inline-note assets-temporary-warning">
+                    The number of temporary assets you can add matches your verified and compliant assets. For example, if you have 5 verified and compliant assets, you can add 5 temporary assets.
+                </div>
+                <p><strong>Temporary asset will expire on:</strong> <span id="assets-temporary-expiration">Jun 20, 2026</span></p>
+                <p>Temporary assets can be assigned to trips right away while standard verification is in progress. The assets will become ineligible for trips if we're unable to verify through the official process because of incorrect or missing documentation.</p>
+
+                <h4>Temporary asset details</h4>
+                <div class="assets-temporary-info">
+                    Make sure the temporary asset details are accurate, as inaccurate details will be automatically rejected.
+                </div>
+                <p class="assets-temporary-required-note">Fields with an asterisk * are required.</p>
+
+                <form id="assets-temporary-form" class="assets-temporary-form" novalidate>
+                    <div class="assets-temporary-field" data-assets-temporary-wrap="bodyType">
+                        <label for="assets-temporary-body-type"><span>Asset body type *</span></label>
+                        <select id="assets-temporary-body-type" data-assets-temporary-field="bodyType">
+                            <option value=""></option>
+                            <option>Tractor (Day and Sleeper cab)</option>
+                            <option>Box truck</option>
+                        </select>
+                        <p class="assets-temporary-error" data-assets-temporary-error="bodyType" hidden>Enter an asset body type</p>
+                    </div>
+
+                    <div class="assets-temporary-field" data-assets-temporary-wrap="ownership">
+                        <label for="assets-temporary-ownership"><span>Ownership *</span></label>
+                        <select id="assets-temporary-ownership" data-assets-temporary-field="ownership">
+                            <option value=""></option>
+                            <option>Carrier owned</option>
+                            <option>Driver owned</option>
+                            <option>Leased</option>
+                            <option>Rental</option>
+                        </select>
+                        <p class="assets-temporary-error" data-assets-temporary-error="ownership" hidden>Enter an ownership type</p>
+                    </div>
+
+                    <div class="assets-temporary-grid">
+                        <div class="assets-temporary-field" data-assets-temporary-wrap="lpCountry">
+                            <label for="assets-temporary-lp-country"><span>LP country *</span></label>
+                            <select id="assets-temporary-lp-country" data-assets-temporary-field="lpCountry">
+                                <option value=""></option>
+                                <option>CA</option>
+                                <option>MX</option>
+                                <option>US</option>
+                            </select>
+                            <p class="assets-temporary-error" data-assets-temporary-error="lpCountry" hidden>Enter a license plate country</p>
+                        </div>
+                        <div class="assets-temporary-field" data-assets-temporary-wrap="lpState">
+                            <label for="assets-temporary-lp-state"><span>LP state *</span></label>
+                            <input id="assets-temporary-lp-state" type="text" maxlength="2" data-assets-temporary-field="lpState">
+                            <p class="assets-temporary-error" data-assets-temporary-error="lpState" hidden>Enter a license plate state</p>
+                        </div>
+                        <div class="assets-temporary-field" data-assets-temporary-wrap="lpNumber">
+                            <label for="assets-temporary-lp-number"><span>LP number *</span></label>
+                            <input id="assets-temporary-lp-number" type="text" maxlength="5" data-assets-temporary-field="lpNumber">
+                            <p class="assets-temporary-error" data-assets-temporary-error="lpNumber" hidden>Invalid license plate number. Enter 5 digits.</p>
+                        </div>
+                    </div>
+
+                    <div class="assets-temporary-field" data-assets-temporary-wrap="unitNumber">
+                        <label for="assets-temporary-unit-input"><span>Asset unit number *</span></label>
+                        <input id="assets-temporary-unit-input" type="text" maxlength="6" data-assets-temporary-field="unitNumber">
+                        <p class="assets-temporary-error" data-assets-temporary-error="unitNumber" hidden>Enter a unit number</p>
+                    </div>
+
+                    <div class="assets-temporary-field" data-assets-temporary-wrap="vin">
+                        <label for="assets-temporary-vin"><span>VIN *</span></label>
+                        <input id="assets-temporary-vin" type="text" maxlength="17" data-assets-temporary-field="vin">
+                        <p class="assets-temporary-error" data-assets-temporary-error="vin" hidden>Invalid VIN. Enter the 17-character alphanumeric vehicle identifier.</p>
+                    </div>
+
+                    <div class="assets-temporary-actions">
+                        <button id="assets-temporary-cancel" type="button" class="btn btn-ghost">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay assets-temporary-overlay" id="assets-add-overlay" aria-hidden="true">
+        <div class="assets-temporary-modal" role="dialog" aria-modal="true" aria-labelledby="assets-add-title">
+            <div class="assets-temporary-modal-head">
+                <h2 id="assets-add-title">Add asset</h2>
+                <button id="assets-add-close" class="close-x" type="button" aria-label="Close add asset modal">&times;</button>
+            </div>
+            <div class="assets-temporary-modal-body">
+                <h3>Add asset</h3>
+                <p>Import assets to your roster using this form. After import, Amazon will review, and then we might contact your company for more documentation. It may take up to five days for Amazon to reply to you. For assistance, see the <a href="documents.html">asset FAQs</a> and <a href="learningcenter.html">training course</a>.</p>
+                <p class="assets-temporary-required-note">Fields with an asterisk * are required.</p>
+
+                <form id="assets-add-form" class="assets-temporary-form" novalidate>
+                    <div class="assets-temporary-field" data-assets-add-wrap="bodyType">
+                        <label for="assets-add-body-type"><span>Asset body type *</span></label>
+                        <select id="assets-add-body-type" data-assets-add-field="bodyType">
+                            <option value=""></option>
+                            <option>Tractor (Day and Sleeper cab)</option>
+                            <option>Box truck</option>
+                        </select>
+                        <p class="assets-temporary-error" data-assets-add-error="bodyType" hidden>Enter an asset body type</p>
+                    </div>
+
+                    <div class="assets-temporary-field" data-assets-add-wrap="ownership">
+                        <label for="assets-add-ownership"><span>Ownership *</span></label>
+                        <select id="assets-add-ownership" data-assets-add-field="ownership">
+                            <option value=""></option>
+                            <option>Carrier owned</option>
+                            <option>Driver owned</option>
+                            <option>Leased</option>
+                            <option>Rental</option>
+                        </select>
+                        <p class="assets-temporary-error" data-assets-add-error="ownership" hidden>Enter an ownership type</p>
+                    </div>
+
+                    <div class="assets-temporary-grid">
+                        <div class="assets-temporary-field" data-assets-add-wrap="lpCountry">
+                            <label for="assets-add-lp-country"><span>LP country *</span></label>
+                            <select id="assets-add-lp-country" data-assets-add-field="lpCountry">
+                                <option value=""></option>
+                                <option>CA</option>
+                                <option>MX</option>
+                                <option>US</option>
+                            </select>
+                            <p class="assets-temporary-error" data-assets-add-error="lpCountry" hidden>Enter a license plate country</p>
+                        </div>
+                        <div class="assets-temporary-field" data-assets-add-wrap="lpState">
+                            <label for="assets-add-lp-state"><span>LP state *</span></label>
+                            <input id="assets-add-lp-state" type="text" maxlength="2" data-assets-add-field="lpState">
+                            <p class="assets-temporary-error" data-assets-add-error="lpState" hidden>Enter a license plate state</p>
+                        </div>
+                        <div class="assets-temporary-field" data-assets-add-wrap="lpNumber">
+                            <label for="assets-add-lp-number"><span>LP number *</span></label>
+                            <input id="assets-add-lp-number" type="text" maxlength="5" data-assets-add-field="lpNumber">
+                            <p class="assets-temporary-error" data-assets-add-error="lpNumber" hidden>Invalid license plate number. Enter 5 digits.</p>
+                        </div>
+                    </div>
+
+                    <div class="assets-temporary-field" data-assets-add-wrap="unitNumber">
+                        <label for="assets-add-unit-input"><span>Asset unit number *</span></label>
+                        <input id="assets-add-unit-input" type="text" maxlength="6" data-assets-add-field="unitNumber">
+                        <p class="assets-temporary-error" data-assets-add-error="unitNumber" hidden>Enter a unit number</p>
+                    </div>
+
+                    <div class="assets-temporary-field" data-assets-add-wrap="vin">
+                        <label for="assets-add-vin"><span>VIN *</span></label>
+                        <input id="assets-add-vin" type="text" maxlength="17" data-assets-add-field="vin">
+                        <p class="assets-temporary-error" data-assets-add-error="vin" hidden>Invalid VIN. Enter the 17-character alphanumeric vehicle identifier.</p>
+                    </div>
+
+                    <div class="assets-temporary-actions">
+                        <button id="assets-add-cancel" type="button" class="btn btn-ghost">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay assets-temporary-overlay" id="assets-import-overlay" aria-hidden="true">
+        <div class="assets-import-modal" role="dialog" aria-modal="true" aria-labelledby="assets-import-title">
+            <div class="assets-temporary-modal-head">
+                <h2 id="assets-import-title">Import assets</h2>
+                <button id="assets-import-close" class="close-x" type="button" aria-label="Close import assets modal">&times;</button>
+            </div>
+            <div class="assets-temporary-modal-body assets-import-body">
+                <h3>Import assets from spreadsheet</h3>
+                <p>Follow these steps to import assets from a spreadsheet. After import, Amazon will review, and then we might contact your company for more documentation. It may take up to five days for Amazon to reply to you.</p>
+                <p>For assistance, see the <a href="documents.html">asset FAQs</a> and <a href="learningcenter.html">training course</a>.</p>
+
+                <div class="assets-import-section">
+                    <h4>Step 1: Choose an asset type and download the template file</h4>
+                    <p>Right now, Relay only supports importing tractor and box truck assets. If you have both types of assets, you'll need to import them separately.</p>
+                    <select id="assets-import-type">
+                        <option value="">Asset type</option>
+                        <option>Tractor</option>
+                        <option>Box truck</option>
+                    </select>
+                    <button id="assets-import-download" type="button" class="btn btn-ghost assets-import-action" disabled>&#8681; Download template (.xlsx)</button>
+                </div>
+
+                <div class="assets-import-section">
+                    <h4>Step 2: Attach completed Excel (.xlsx) template file</h4>
+                    <p>Once you've entered your fleet's asset information in the spreadsheet, save it and attach it below. Maximum of 500 assets can be uploaded at a time.</p>
+                    <button id="assets-import-attach" type="button" class="btn btn-ghost assets-import-action">&#8682; Attach completed template (.xlsx)</button>
+                </div>
+
+                <div class="assets-import-footer">
+                    <button id="assets-import-cancel" type="button" class="btn btn-ghost">Cancel</button>
+                    <button id="assets-import-submit" type="button" class="btn btn-primary">Import assets</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets-data.js"></script>
+    <script src="asset-temporary-modal.js"></script>
+    <script src="asset-add-modal.js"></script>
+    <script src="asset-import-modal.js"></script>
+    <script src="assets.js"></script>
+    <script src="ai-teacher.js"></script>
+
+</html>
+

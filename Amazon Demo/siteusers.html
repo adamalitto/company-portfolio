@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Users</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="relay-screens.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="https://dfz3xbn3chdu5.cloudfront.net/OptimusWebPlatform/img/Relay_Logo._V516635218_.svg" class="optimus-relay-logo__image" alt="Relay logo">
+                <h2>Future Logistics Academy</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="notification.html">Notifications</a></li>
+                    <li><a href="trips.html">Trips</a></li>
+                    <li><a href="loadboard.html">Load Board</a></li>
+                    <li><a href="auctions.html">Auctions</a></li>
+                    <li><a href="equipmentmarketplace.html">Equipment Marketplace</a></li>
+                    <li><a href="contracts.html">Contracts</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle">Managing Resources <span class="arrow">&#9660;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="driverroster.html">Driver Roster</a></li>
+                            <li><a href="assets.html">Assets</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="scorecard.html">Scorecard</a></li>
+                    <li><a href="learningcenter.html">Learning Center</a></li>
+                    <li><a href="rewards.html">Rewards</a></li>
+                    <li><a href="payments.html">Payments</a></li>
+                    <li class="dropdown active">
+                        <a href="javascript:void(0)" class="dropdown-toggle carrier-accounts-toggle">Carrier Account <span class="arrow">&#9660;</span></a>
+                        <ul class="dropdown-menu carrier-accounts-dropdown">
+                            <li><a href="companyprofile.html">Company Profile</a></li>
+                            <li><a href="documents.html">Documents</a></li>
+                            <li><a href="paymentinfo.html">Payment Info</a></li>
+                            <li><a href="siteusers.html" class="active-page">Site Users</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <footer>
+                <a href="supportcenter.html">Support Center</a>
+                <a href="userprofile.html">User Profile</a>
+                <a href="userprofile.html#feedback">Give Feedback</a>
+                <a href="../index.html">Sign out</a>
+            </footer>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar-fullwidth">
+                <header class="top-bar">
+                    <div class="breadcrumb-container">
+                        <div class="hamburger-icon" id="hamburger-icon">&#9776;</div>
+                        <div class="breadcrumb">Carrier Account / Site Users</div>
+                    </div>
+                                        <div class="top-icons" aria-label="Header shortcuts">
+                        <span class="relay-header-icon icon-tick" title="Checklist" aria-label="Checklist">&#9745;</span>
+                        <span class="relay-header-icon icon-bell relay-bell-wrap" title="Notifications" aria-label="Notifications">&#128276;<span class="badge-number">233</span></span>
+                        <span class="relay-header-icon icon-help" title="Help" aria-label="Help">?</span>
+                    </div>
+                </header>
+                <div class="trips-header">
+                    <h1>Site Users</h1>
+                </div>
+            </div>
+
+            <div class="page-shell">
+                <div class="card" style="max-width: 980px;">
+                    <div class="card-body">
+                        <p class="tiny muted" style="margin-top: 0;">New users will receive an email invitation to sign in to Amazon Relay. Add users who can answer questions from Support as necessary.</p>
+                        <div class="filters" style="margin-bottom: 8px;">
+                            <div class="search-box"><input type="search" placeholder="Search for name, email, phone..."></div>
+                            <div class="w-220"><select><option>Filter by Domicile(s)</option></select></div>
+                            <div class="w-160"><select><option>10 per page</option></select></div>
+                            <button class="btn btn-primary" type="button">Add User</button>
+                        </div>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Full Name</th>
+                                    <th>Email Address</th>
+                                    <th>Phone Number</th>
+                                    <th>Roles</th>
+                                    <th>Domiciles</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Adam Smith</strong></td>
+                                    <td>futurelogisticsacademy@gmail.com</td>
+                                    <td>500-600-7080</td>
+                                    <td>Primary Administrator</td>
+                                    <td>No domiciles selected</td>
+                                    <td>Active</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cody Corby</strong></td>
+                                    <td>futurelogisticsacademy2@gmail.com</td>
+                                    <td>800-500-7030</td>
+                                    <td>Administrator</td>
+                                    <td>No domiciles selected</td>
+                                    <td>Active</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tiny muted" style="text-align: right; margin-top: 8px;">&#8249; &#8250; 1</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="ai-teacher.js"></script>
+
+</html>

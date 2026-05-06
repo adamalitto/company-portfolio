@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrier Terms - Print Version</title>
+    <style>
+        :root {
+            color-scheme: light;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+            background: #f4f6f8;
+            color: #202b33;
+        }
+
+        .print-shell {
+            max-width: 900px;
+            margin: 18px auto;
+            background: #ffffff;
+            border: 1px solid #d9e0e6;
+            padding: 22px 24px;
+        }
+
+        .print-actions {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+            margin-bottom: 12px;
+        }
+
+        .print-actions button,
+        .print-actions a {
+            border: 1px solid #bcc9d3;
+            background: #f8fbfd;
+            color: #1d3b4b;
+            font-size: 12px;
+            text-decoration: none;
+            padding: 7px 10px;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        h1 {
+            margin: 0 0 6px;
+            font-size: 24px;
+            color: #193544;
+        }
+
+        .subtitle {
+            margin: 0 0 16px;
+            color: #5f7382;
+            font-size: 12px;
+        }
+
+        h2 {
+            margin: 14px 0 6px;
+            font-size: 15px;
+            color: #243f4d;
+        }
+
+        p,
+        li {
+            margin: 0 0 8px;
+            font-size: 12px;
+            line-height: 1.45;
+            color: #2f4756;
+        }
+
+        ul {
+            margin: 0 0 8px 18px;
+            padding: 0;
+        }
+
+        @media print {
+            body {
+                background: #ffffff;
+            }
+
+            .print-shell {
+                margin: 0;
+                border: 0;
+                padding: 0;
+                max-width: none;
+            }
+
+            .print-actions {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="print-shell">
+        <div class="print-actions">
+            <a href="carrierterms.html">Back</a>
+            <a href="Documents.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+            <button type="button" onclick="window.print()">Print</button>
+        </div>
+
+        <h1>Carrier Terms of Service</h1>
+        <p class="subtitle">Neutral training copy for document workflow demonstration.</p>
+
+        <h2>1. Scope</h2>
+        <p>This document defines the service terms between the platform and the carrier for operational workflows, communications, and settlement handling.</p>
+
+        <h2>2. Service Responsibilities</h2>
+        <ul>
+            <li>The carrier maintains active compliance records and operational readiness.</li>
+            <li>The platform provides access to available work opportunities and account tools.</li>
+            <li>Both parties maintain accurate records for assigned and completed work.</li>
+        </ul>
+
+        <h2>3. Safety and Compliance</h2>
+        <ul>
+            <li>The carrier follows all applicable safety standards for each assignment.</li>
+            <li>Required certifications and insurance categories stay current in account records.</li>
+            <li>Policy updates may be issued and acknowledged through the document center.</li>
+        </ul>
+
+        <h2>4. Settlement and Disputes</h2>
+        <p>Settlement details are provided through account tools. Disputes are submitted through designated support and payments channels.</p>
+
+        <h2>5. Data Handling</h2>
+        <p>Operational data is used to support dispatch workflows, account management, and performance reporting. Confidential information must be protected by both parties.</p>
+
+        <h2>6. Changes and Termination</h2>
+        <p>Terms may be revised by policy notice. Continued service use indicates acceptance of current terms.</p>
+    </div>
+</body>
+</html>

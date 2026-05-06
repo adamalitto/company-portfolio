@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="relay-screens.css">
+</head>
+<body class="user-profile-page">
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="https://dfz3xbn3chdu5.cloudfront.net/OptimusWebPlatform/img/Relay_Logo._V516635218_.svg" class="optimus-relay-logo__image" alt="Relay logo">
+                <h2>Future Logistics Academy</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="notification.html">Notifications</a></li>
+                    <li><a href="trips.html">Trips</a></li>
+                    <li><a href="loadboard.html">Load Board</a></li>
+                    <li><a href="auctions.html">Auctions</a></li>
+                    <li><a href="equipmentmarketplace.html">Equipment Marketplace</a></li>
+                    <li><a href="contracts.html">Contracts</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle">Managing Resources <span class="arrow">&#9660;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="driverroster.html">Driver Roster</a></li>
+                            <li><a href="assets.html">Assets</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="scorecard.html">Scorecard</a></li>
+                    <li><a href="learningcenter.html">Learning Center</a></li>
+                    <li><a href="rewards.html">Rewards</a></li>
+                    <li><a href="payments.html">Payments</a></li>
+                    <li class="dropdown active">
+                        <a href="javascript:void(0)" class="dropdown-toggle carrier-accounts-toggle">Carrier Account <span class="arrow">&#9660;</span></a>
+                        <ul class="dropdown-menu carrier-accounts-dropdown">
+                            <li><a href="companyprofile.html">Company Profile</a></li>
+                            <li><a href="documents.html">Documents</a></li>
+                            <li><a href="paymentinfo.html">Payment Info</a></li>
+                            <li><a href="siteusers.html">Site Users</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <footer>
+                <a href="supportcenter.html">Support Center</a>
+                <a href="userprofile.html" class="active-page">User Profile</a>
+                <a href="#feedback" id="openFeedback">Give Feedback</a>
+                <a href="../index.html">Sign out</a>
+            </footer>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar-fullwidth">
+                <header class="top-bar">
+                    <div class="breadcrumb-container">
+                        <div class="hamburger-icon" id="hamburger-icon">&#9776;</div>
+                        <div class="breadcrumb">Dashboard / Carrier Account / Site Users / Abror</div>
+                    </div>
+                                        <div class="top-icons" aria-label="Header shortcuts">
+                        <span class="relay-header-icon icon-tick" title="Checklist" aria-label="Checklist">&#9745;</span>
+                        <span class="relay-header-icon icon-bell relay-bell-wrap" title="Notifications" aria-label="Notifications">&#128276;<span class="badge-number">233</span></span>
+                        <span class="relay-header-icon icon-help" title="Help" aria-label="Help">?</span>
+                    </div>
+                </header>
+                <div class="trips-header">
+                    <h1>User Profile</h1>
+                </div>
+            </div>
+
+            <div class="page-shell">
+                <div class="card user-profile-card">
+                    <div class="card-body">
+                        <div class="tabs" role="tablist" aria-label="User Profile sections">
+                            <button class="tab active" type="button" role="tab" aria-selected="true" data-target="profile-pane-account">Account</button>
+                            <button class="tab" type="button" role="tab" aria-selected="false" data-target="profile-pane-notifications">Notification settings</button>
+                            <button class="tab" type="button" role="tab" aria-selected="false" data-target="profile-pane-role">User Role</button>
+                            <button class="tab" type="button" role="tab" aria-selected="false" data-target="profile-pane-permissions">Permissions</button>
+                        </div>
+
+                        <section id="profile-pane-account" class="profile-pane">
+                            <h3 style="margin: 0 0 6px;">Account Login</h3>
+                            <p class="small" style="margin: 0 0 8px;"><strong>Abror</strong><br>tageneralfreight@gmail.com</p>
+                            <div class="small muted" style="margin-bottom: 8px;">Status</div>
+                            <label class="small" style="margin-right: 12px;"><input type="radio" checked> Active</label>
+                            <label class="small"><input type="radio"> Inactive</label>
+
+                            <h3 style="margin: 14px 0 6px;">Assigned Locations</h3>
+                            <div class="field-grid-3" style="max-width: 520px; margin-bottom: 10px;">
+                                <div class="field"><select><option>Domicile(s)</option></select></div>
+                                <div class="field"><select><option>Language Preference</option></select></div>
+                                <div class="field"><select><option>Timezone location: Eastern (ET)</option></select></div>
+                            </div>
+
+                            <h3 style="margin: 14px 0 6px;">Phone Preferences</h3>
+                            <div class="field-grid-4" style="margin-bottom: 8px;">
+                                <div class="field"><select><option>Country code +1</option></select></div>
+                                <div class="field"><input type="text" value="500-600-7080"></div>
+                                <div class="field"><input type="text" placeholder="Extension"></div>
+                                <div class="field"><select><option>Phone type</option></select></div>
+                            </div>
+                            <label class="tiny muted"><input type="checkbox" checked> Primary contact number</label>
+
+                            <div style="margin-top: 12px;" class="small">
+                                Available hours
+                                <label style="margin-left: 10px;"><input type="checkbox"> Morning</label>
+                                <label><input type="checkbox"> Afternoon</label>
+                                <label><input type="checkbox"> Evening</label>
+                                <label><input type="checkbox"> Night</label>
+                            </div>
+
+                            <div style="margin-top: 12px; display:flex; gap:8px;">
+                                <button class="btn" type="button">+ Add new contact number</button>
+                                <button class="btn btn-primary" type="button">Save</button>
+                                <button class="btn" type="button">Delete User</button>
+                            </div>
+                        </section>
+
+                        <section id="profile-pane-notifications" class="profile-pane" hidden>
+                            <h3 class="profile-title">Which notifications you receive</h3>
+                            <ul class="profile-notification-list">
+                                <li><span>Booking Work</span><span class="profile-chevron">&#8250;</span></li>
+                                <li><span>Execution</span><span class="profile-chevron">&#8250;</span></li>
+                                <li><span>Account Management</span><span class="profile-chevron">&#8250;</span></li>
+                                <li><span>Disruptions</span><span class="profile-chevron">&#8250;</span></li>
+                                <li><span>Disputes</span><span class="profile-chevron">&#8250;</span></li>
+                                <li><span>Compliance</span><span class="profile-chevron">&#8250;</span></li>
+                                <li><span>Learning</span><span class="profile-chevron">&#8250;</span></li>
+                            </ul>
+                            <div class="profile-reset-row">
+                                <button class="btn profile-reset-btn" type="button">&#8635; Reset notification settings to default</button>
+                            </div>
+                            <p class="tiny muted profile-note">&#9432; Resetting notifications to default settings cannot be undone</p>
+                        </section>
+
+                        <section id="profile-pane-role" class="profile-pane" hidden>
+                            <h3 class="profile-title">User Role</h3>
+                            <div class="profile-role-heading">Primary Administrator</div>
+                            <p class="tiny muted">Performs all tasks of a dispatcher and administrator; in addition, sets up company profile and activates or inactivates users.</p>
+
+                            <div class="field profile-role-field">
+                                <label>Select a new Primary Admin</label>
+                                <select><option>Select a new Primary Admin</option></select>
+                            </div>
+
+                            <p class="tiny muted">
+                                Assigning a new Primary Admin will remove rights of the current Primary Admin and assign regular Admin permissions.
+                                The selected user will be granted Primary Admin permissions.
+                            </p>
+
+                            <div class="profile-role-options">
+                                <label><input type="radio" name="role-option"> <strong>Dispatcher</strong><br><span>Accepts and rejects trips, assigns drivers to loads, and updates trip status and timestamps. Can view and edit capacity. Can't view company account or financial details, including payouts.</span></label>
+                                <label><input type="radio" name="role-option"> <strong>Administrator</strong><br><span>Updates all data in Amazon Relay, and manages new and existing users. Can't delete or deactivate Primary Administrator.</span></label>
+                            </div>
+
+                            <div class="field profile-notes-field">
+                                <label>Notes</label>
+                                <input type="text" placeholder="e.g. On call weekends and evenings">
+                            </div>
+
+                            <div class="profile-actions">
+                                <button class="btn btn-primary" type="button">Save</button>
+                                <button class="btn" type="button">Delete User</button>
+                            </div>
+                        </section>
+
+                        <section id="profile-pane-permissions" class="profile-pane" hidden>
+                            <p class="profile-permissions-empty">There are no applicable permissions for this user</p>
+                            <div class="profile-actions">
+                                <button class="btn btn-primary" type="button">Save</button>
+                                <button class="btn" type="button">Delete User</button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="overlay" id="feedbackOverlay" aria-hidden="true">
+        <div class="modal">
+            <div class="modal-head">
+                <h3>Give Feedback</h3>
+                <button class="close-x" id="closeFeedback" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="small" style="margin-bottom: 8px;">Tap stars to select</div>
+                <div style="display:flex; gap:6px; margin-bottom:8px;">
+                    <button class="btn">&#9734;</button>
+                    <button class="btn">&#9734;</button>
+                    <button class="btn">&#9734;</button>
+                    <button class="btn">&#9734;</button>
+                    <button class="btn">&#9734;</button>
+                </div>
+                <div class="field" style="margin-bottom: 8px;"><select><option>Select topic</option></select></div>
+                <div class="field"><textarea rows="6" placeholder="Enter your feedback"></textarea></div>
+                <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:10px;">
+                    <button class="btn" id="cancelFeedback" type="button">Cancel</button>
+                    <button class="btn btn-primary" type="button">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="profile.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = Array.from(document.querySelectorAll('.user-profile-page .tabs .tab[data-target]'));
+            const panes = Array.from(document.querySelectorAll('.user-profile-page .profile-pane'));
+
+            const activatePane = (targetId) => {
+                tabs.forEach((tab) => {
+                    const isActive = tab.dataset.target === targetId;
+                    tab.classList.toggle('active', isActive);
+                    tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+                panes.forEach((pane) => {
+                    pane.hidden = pane.id !== targetId;
+                });
+            };
+
+            tabs.forEach((tab) => {
+                tab.addEventListener('click', () => activatePane(tab.dataset.target));
+            });
+        });
+    </script>
+    <script src="ai-teacher.js"></script>
+
+</html>
+

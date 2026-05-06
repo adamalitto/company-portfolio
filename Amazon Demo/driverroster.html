@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Roster</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="relay-screens.css">
+</head>
+<body class="driver-roster-page">
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="https://dfz3xbn3chdu5.cloudfront.net/OptimusWebPlatform/img/Relay_Logo._V516635218_.svg" class="optimus-relay-logo__image" alt="Relay logo">
+                <h2>Future Logistics Academy</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="notification.html">Notifications</a></li>
+                    <li><a href="trips.html">Trips</a></li>
+                    <li><a href="loadboard.html">Load Board</a></li>
+                    <li><a href="auctions.html">Auctions</a></li>
+                    <li><a href="equipmentmarketplace.html">Equipment Marketplace</a></li>
+                    <li><a href="contracts.html">Contracts</a></li>
+                    <li class="dropdown active">
+                        <a href="javascript:void(0)" class="dropdown-toggle">Managing Resources <span class="arrow">&#9660;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="driverroster.html" class="active-page">Driver Roster</a></li>
+                            <li><a href="assets.html">Assets</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="scorecard.html">Scorecard</a></li>
+                    <li><a href="learningcenter.html">Learning Center</a></li>
+                    <li><a href="rewards.html">Rewards</a></li>
+                    <li><a href="payments.html">Payments</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle carrier-accounts-toggle">Carrier Account <span class="arrow">&#9660;</span></a>
+                        <ul class="dropdown-menu carrier-accounts-dropdown">
+                            <li><a href="companyprofile.html">Company Profile</a></li>
+                            <li><a href="documents.html">Documents</a></li>
+                            <li><a href="paymentinfo.html">Payment Info</a></li>
+                            <li><a href="siteusers.html">Site Users</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <footer>
+                <a href="supportcenter.html">Support Center</a>
+                <a href="userprofile.html">User Profile</a>
+                <a href="userprofile.html#feedback">Give Feedback</a>
+                <a href="../index.html">Sign out</a>
+            </footer>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar-fullwidth">
+                <header class="top-bar">
+                    <div class="breadcrumb-container">
+                        <div class="hamburger-icon" id="hamburger-icon">&#9776;</div>
+                        <div class="breadcrumb">Driver Roster</div>
+                    </div>
+                                        <div class="top-icons" aria-label="Header shortcuts">
+                        <span class="relay-header-icon icon-tick" title="Checklist" aria-label="Checklist">&#9745;</span>
+                        <span class="relay-header-icon icon-bell relay-bell-wrap" title="Notifications" aria-label="Notifications">&#128276;<span class="badge-number">233</span></span>
+                        <span class="relay-header-icon icon-help" title="Help" aria-label="Help">?</span>
+                    </div>
+                </header>
+                <div class="trips-header">
+                    <h1>Driver Roster</h1>
+                </div>
+            </div>
+
+            <div class="page-shell">
+                <div class="driver-roster-invite-banner is-hidden" id="driver-roster-invite-banner" role="status" aria-live="polite">
+                    <span id="driver-roster-invite-message">An invitation has been sent.</span>
+                    <button class="driver-roster-invite-close" id="driver-roster-invite-close" type="button" aria-label="Close invitation message">&times;</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="filters" style="margin-bottom: 8px;">
+                            <div class="search-box" style="max-width: 360px;">
+                                <input id="driver-roster-search" type="search" placeholder="Search for name, email, or phone">
+                            </div>
+                            <button class="btn" type="button">&#9881;</button>
+                            <div style="margin-left: auto;"></div>
+                            <button class="btn btn-primary" id="driver-roster-add-button" type="button">Add driver</button>
+                        </div>
+
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Driver</th>
+                                    <th>Domiciles</th>
+                                    <th>Mobile phone number</th>
+                                    <th>Load eligibility</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="driver-roster-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="overlay driver-roster-add-overlay" id="driver-roster-add-overlay" aria-hidden="true">
+        <div class="modal driver-roster-add-modal" role="dialog" aria-modal="true" aria-labelledby="driver-roster-add-title">
+            <div class="modal-head driver-roster-add-head">
+                <h3 id="driver-roster-add-title">Add Driver</h3>
+                <button class="close-x driver-roster-add-close" id="driver-roster-add-close" type="button" aria-label="Close add driver dialog">&times;</button>
+            </div>
+            <div class="modal-body driver-roster-add-body">
+                <div class="field driver-roster-add-field">
+                    <span>Domiciles</span>
+                    <div class="driver-roster-domicile-picker" id="driver-roster-domicile-picker">
+                        <button class="driver-roster-domicile-trigger" id="driver-roster-domicile-trigger" type="button" aria-expanded="false" aria-haspopup="listbox">
+                            <span id="driver-roster-domicile-label">None selected</span>
+                            <span class="driver-roster-domicile-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="driver-roster-domicile-menu" id="driver-roster-domicile-menu" hidden>
+                            <button class="driver-roster-domicile-option" type="button" data-domicile-option="all">
+                                <span>All</span>
+                                <span class="driver-roster-domicile-check" aria-hidden="true">&#10003;</span>
+                            </button>
+                            <button class="driver-roster-domicile-option" type="button" data-domicile-option="bwi">
+                                <span>BWI - Baltimore, MD</span>
+                                <span class="driver-roster-domicile-check" aria-hidden="true">&#10003;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="driver-roster-add-copy">Add up to 100 email addresses, separated by commas or pasted from an Excel spreadsheet.</p>
+
+                <label class="field driver-roster-add-field" for="driver-roster-email-input">
+                    <textarea id="driver-roster-email-input" rows="5" placeholder="Paste addresses from an Excel spreadsheet or add addresses individually, separated by a comma."></textarea>
+                </label>
+
+                <div class="driver-roster-add-meta">
+                    <span id="driver-roster-email-count">0/100</span>
+                </div>
+
+                <div class="driver-roster-add-actions">
+                    <button class="btn" id="driver-roster-add-cancel" type="button">Cancel</button>
+                    <button class="btn btn-primary driver-roster-send-button" id="driver-roster-send-invite" type="button" disabled>Send invite</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="driverroster.js"></script>
+    <script src="ai-teacher.js"></script>
+
+</html>

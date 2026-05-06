@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contracts</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="relay-screens.css">
+    <link rel="stylesheet" href="contracts.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="https://dfz3xbn3chdu5.cloudfront.net/OptimusWebPlatform/img/Relay_Logo._V516635218_.svg" class="optimus-relay-logo__image" alt="Relay logo">
+                <h2>Future Logistics Academy</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="notification.html">Notifications</a></li>
+                    <li><a href="trips.html">Trips</a></li>
+                    <li><a href="loadboard.html">Load Board</a></li>
+                    <li><a href="auctions.html">Auctions</a></li>
+                    <li><a href="equipmentmarketplace.html">Equipment Marketplace</a></li>
+                    <li><a href="contracts.html" class="active-page">Contracts</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle">Managing Resources <span class="arrow">&#9660;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="driverroster.html">Driver Roster</a></li>
+                            <li><a href="assets.html">Assets</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="scorecard.html">Scorecard</a></li>
+                    <li><a href="learningcenter.html">Learning Center</a></li>
+                    <li><a href="rewards.html">Rewards</a></li>
+                    <li><a href="payments.html">Payments</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle carrier-accounts-toggle">Carrier Account <span class="arrow">&#9660;</span></a>
+                        <ul class="dropdown-menu carrier-accounts-dropdown">
+                            <li><a href="companyprofile.html">Company Profile</a></li>
+                            <li><a href="documents.html">Documents</a></li>
+                            <li><a href="paymentinfo.html">Payment Info</a></li>
+                            <li><a href="siteusers.html">Site Users</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <footer>
+                <a href="supportcenter.html">Support Center</a>
+                <a href="userprofile.html">User Profile</a>
+                <a href="userprofile.html#feedback">Give Feedback</a>
+                <a href="../index.html">Sign out</a>
+            </footer>
+        </aside>
+
+        <main class="main-content contracts-page">
+            <div class="top-bar-fullwidth">
+                <header class="top-bar">
+                    <div class="breadcrumb-container">
+                        <div class="hamburger-icon" id="hamburger-icon">&#9776;</div>
+                        <div class="breadcrumb">Dashboard / Contracts</div>
+                    </div>
+                                        <div class="top-icons" aria-label="Header shortcuts">
+                        <span class="relay-header-icon icon-tick" title="Checklist" aria-label="Checklist">&#9745;</span>
+                        <span class="relay-header-icon icon-bell relay-bell-wrap" title="Notifications" aria-label="Notifications">&#128276;<span class="badge-number">233</span></span>
+                        <span class="relay-header-icon icon-help" title="Help" aria-label="Help">?</span>
+                    </div>
+                </header>
+                <div class="trips-header">
+                    <h1>Contracts</h1>
+                </div>
+            </div>
+
+            <div class="page-shell">
+                <section class="contracts-tabs" role="tablist" aria-label="Contract tabs">
+                    <button class="contracts-tab active" type="button" data-contract-tab="available" aria-selected="true">Available offers</button>
+                    <button class="contracts-tab" type="button" data-contract-tab="booked" aria-selected="false">Contracts</button>
+                </section>
+
+                <div class="contracts-available-shell" id="contracts-available-shell">
+                <section class="card contracts-promo-card" id="contracts-promo-card">
+                    <div class="card-body">
+                        <div class="contracts-promo-main">
+                            <span class="contracts-promo-icon" aria-hidden="true">i</span>
+                            <div class="contracts-promo-copy">
+                                <h2 id="contracts-promo-title">Relay Rewards Contract Promotions</h2>
+                                <p id="contracts-promo-body"></p>
+                            </div>
+                            <button class="contracts-promo-close" id="contracts-promo-close" type="button" aria-label="Dismiss promotion">&times;</button>
+                        </div>
+                        <div class="contracts-promo-dots" id="contracts-promo-dots" aria-label="Promotion slides"></div>
+                    </div>
+                </section>
+
+                <section class="contracts-early-banner" id="contracts-early-banner">
+                    <button class="contracts-banner-close" id="contracts-early-close" type="button" aria-label="Dismiss performance notification">&times;</button>
+                    <div class="contracts-early-copy">
+                        <div class="contracts-early-icon" aria-hidden="true">S</div>
+                        <div>
+                            <h2>You've unlocked early access, reserved for our top-performing carriers.</h2>
+                            <p>On Wednesdays, you can now preview contracts at 8:00am PST and book at 8:30am PST.</p>
+                        </div>
+                    </div>
+                    <div class="contracts-score-block">
+                        <p class="contracts-score-value">A+ <span>100%</span></p>
+                        <a href="scorecard.html">Go To Performance</a>
+                    </div>
+                </section>
+
+                <p class="contracts-learning-row">
+                    Learn more with
+                    <a href="learningcenter.html">Short-Term Contracts course</a>
+                    or the training guide
+                    (<a href="learningcenter.html">English</a> and <a href="learningcenter.html">Spanish</a>).
+                </p>
+
+                <section class="contracts-filter-band" aria-label="Contracts filters">
+                    <div class="contracts-filter-row">
+                        <label class="contracts-select-field">
+                            <span>Domicile</span>
+                            <select id="contracts-domicile-filter"></select>
+                        </label>
+
+                        <label class="contracts-select-field">
+                            <span>Equipment</span>
+                            <select id="contracts-equipment-filter"></select>
+                        </label>
+
+                        <label class="contracts-select-field">
+                            <span>Driver type</span>
+                            <select id="contracts-driver-filter"></select>
+                        </label>
+
+                        <label class="contracts-date-field" for="contracts-start-date">
+                            <input id="contracts-start-date" type="text" placeholder="Start date" autocomplete="off">
+                            <span class="contracts-date-icon" aria-hidden="true">&#128197;</span>
+                        </label>
+
+                        <label class="contracts-date-field" for="contracts-end-date">
+                            <input id="contracts-end-date" type="text" placeholder="End date" autocomplete="off">
+                            <span class="contracts-date-icon" aria-hidden="true">&#128197;</span>
+                        </label>
+                    </div>
+
+                    <div class="contracts-chip-row" id="contracts-chip-row"></div>
+                </section>
+
+                <section class="contracts-toolbar" aria-label="Contracts results toolbar">
+                    <div class="contracts-toolbar-left">
+                        <span class="contracts-toolbar-icon" aria-hidden="true">&#9881;</span>
+                        <span id="contracts-results-summary">Showing 0-0 of 0 results</span>
+                        <button class="contracts-clear-filters" id="contracts-clear-filters" type="button">Clear all filters</button>
+                    </div>
+
+                    <div class="contracts-toolbar-right">
+                        <div class="contracts-next-update">
+                            <span id="contracts-next-update-label">Next update 113s</span>
+                            <button class="contracts-refresh-button" id="contracts-refresh-button" type="button" aria-label="Refresh contracts">&#8635;</button>
+                        </div>
+
+                        <label class="contracts-sort-label" for="contracts-sort-filter">
+                            <span>Sort by:</span>
+                            <select id="contracts-sort-filter"></select>
+                        </label>
+                    </div>
+                </section>
+
+                <p class="contracts-flash is-hidden" id="contracts-flash-message" role="status" aria-live="polite"></p>
+
+                <section class="contracts-layout" id="contracts-layout">
+                    <div class="contracts-list-frame">
+                        <div class="contracts-results-list" id="contracts-results-list"></div>
+                        <div class="contracts-empty-state is-hidden" id="contracts-empty-state"></div>
+                        <div class="contracts-pagination" id="contracts-pagination"></div>
+                    </div>
+
+                    <aside class="contracts-detail-panel" id="contracts-detail-panel"></aside>
+                </section>
+                </div>
+
+                <section class="contracts-booked-shell is-hidden" id="contracts-booked-shell" aria-label="Booked contracts">
+                    <section class="contracts-booked-filter-band" aria-label="Booked contract filters">
+                        <div class="contracts-booked-filter-grid">
+                            <label class="contracts-booked-search-field" for="contracts-booked-search">
+                                <span class="contracts-booked-search-icon" aria-hidden="true">&#128269;</span>
+                                <input id="contracts-booked-search" type="text" placeholder="Search for ID, domiciles ..." autocomplete="off">
+                            </label>
+
+                            <label class="contracts-date-field" for="contracts-booked-start-date">
+                                <input id="contracts-booked-start-date" type="text" placeholder="Start Date" autocomplete="off">
+                                <span class="contracts-date-icon" aria-hidden="true">&#128197;</span>
+                            </label>
+
+                            <label class="contracts-date-field" for="contracts-booked-end-date">
+                                <input id="contracts-booked-end-date" type="text" placeholder="End Date" autocomplete="off">
+                                <span class="contracts-date-icon" aria-hidden="true">&#128197;</span>
+                            </label>
+
+                            <label class="contracts-select-field">
+                                <span>Equipment Type</span>
+                                <select id="contracts-booked-equipment-filter"></select>
+                            </label>
+
+                            <label class="contracts-select-field">
+                                <span>Day of week</span>
+                                <select id="contracts-booked-day-filter"></select>
+                            </label>
+
+                            <label class="contracts-select-field">
+                                <span>Shift-time</span>
+                                <select id="contracts-booked-shift-filter"></select>
+                            </label>
+
+                            <label class="contracts-select-field">
+                                <span>Contract Type</span>
+                                <select id="contracts-booked-contract-type-filter"></select>
+                            </label>
+
+                            <label class="contracts-select-field">
+                                <span>Driver type</span>
+                                <select id="contracts-booked-driver-filter"></select>
+                            </label>
+
+                            <button class="contracts-clear-filters contracts-booked-clear" id="contracts-booked-clear-filters" type="button">Clear all filters</button>
+                        </div>
+                    </section>
+
+                    <section class="contracts-booked-status-tabs" role="tablist" aria-label="Booked contract status tabs">
+                        <button class="contracts-booked-status-tab is-active" type="button" data-booked-contract-tab="upcoming" aria-selected="true">
+                            Upcoming <span id="contracts-booked-count-upcoming">0</span>
+                        </button>
+                        <button class="contracts-booked-status-tab" type="button" data-booked-contract-tab="active" aria-selected="false">
+                            Active <span id="contracts-booked-count-active">0</span>
+                        </button>
+                        <button class="contracts-booked-status-tab" type="button" data-booked-contract-tab="history" aria-selected="false">
+                            History <span id="contracts-booked-count-history">0</span>
+                        </button>
+                    </section>
+
+                    <section class="contracts-booked-content">
+                        <div class="contracts-booked-list" id="contracts-booked-list"></div>
+                        <div class="contracts-booked-empty" id="contracts-booked-empty"></div>
+                    </section>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="contracts.js"></script>
+    <script src="ai-teacher.js"></script>
+
+</html>

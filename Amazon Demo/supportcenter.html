@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="relay-screens.css">
+</head>
+<body class="support-center-page">
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="https://dfz3xbn3chdu5.cloudfront.net/OptimusWebPlatform/img/Relay_Logo._V516635218_.svg" class="optimus-relay-logo__image" alt="Relay logo">
+                <h2>Future Logistics Academy</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="notification.html">Notifications</a></li>
+                    <li><a href="trips.html">Trips</a></li>
+                    <li><a href="loadboard.html">Load Board</a></li>
+                    <li><a href="auctions.html">Auctions</a></li>
+                    <li><a href="equipmentmarketplace.html">Equipment Marketplace</a></li>
+                    <li><a href="contracts.html">Contracts</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle">Managing Resources <span class="arrow">&#9660;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="driverroster.html">Driver Roster</a></li>
+                            <li><a href="assets.html">Assets</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="scorecard.html">Scorecard</a></li>
+                    <li><a href="learningcenter.html">Learning Center</a></li>
+                    <li><a href="rewards.html">Rewards</a></li>
+                    <li><a href="payments.html">Payments</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle carrier-accounts-toggle">Carrier Account <span class="arrow">&#9660;</span></a>
+                        <ul class="dropdown-menu carrier-accounts-dropdown">
+                            <li><a href="companyprofile.html">Company Profile</a></li>
+                            <li><a href="documents.html">Documents</a></li>
+                            <li><a href="paymentinfo.html">Payment Info</a></li>
+                            <li><a href="siteusers.html">Site Users</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <footer>
+                <a href="supportcenter.html" class="active-page">Support Center</a>
+                <a href="userprofile.html">User Profile</a>
+                <a href="userprofile.html#feedback">Give Feedback</a>
+                <a href="../index.html">Sign out</a>
+            </footer>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-bar-fullwidth">
+                <header class="top-bar">
+                    <div class="breadcrumb-container">
+                        <div class="hamburger-icon" id="hamburger-icon">&#9776;</div>
+                        <div class="breadcrumb">Dashboard / Support Center</div>
+                    </div>
+                                        <div class="top-icons" aria-label="Header shortcuts">
+                        <span class="relay-header-icon icon-tick" title="Checklist" aria-label="Checklist">&#9745;</span>
+                        <span class="relay-header-icon icon-bell relay-bell-wrap" title="Notifications" aria-label="Notifications">&#128276;<span class="badge-number">233</span></span>
+                        <span class="relay-header-icon icon-help" title="Help" aria-label="Help">?</span>
+                    </div>
+                </header>
+                <div class="trips-header">
+                    <h1>Support Center</h1>
+                </div>
+            </div>
+
+            <div class="page-shell support-shell">
+                <div class="support-tabs" role="tablist" aria-label="Support sections">
+                    <button class="support-tab active" type="button" role="tab" aria-selected="true" data-target="support-pane-help">Help</button>
+                    <button class="support-tab" type="button" role="tab" aria-selected="false" data-target="support-pane-learning">Learning</button>
+                    <button class="support-tab" type="button" role="tab" aria-selected="false" data-target="support-pane-open">Open</button>
+                    <button class="support-tab" type="button" role="tab" aria-selected="false" data-target="support-pane-closed">Closed</button>
+                    <button class="support-tab" type="button" role="tab" aria-selected="false" data-target="support-pane-attention">Requires Attention</button>
+                </div>
+
+                <section id="support-pane-help" class="support-pane support-pane-active">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="support-title">What can we help you with?</h2>
+                            <div class="filters support-help-search">
+                                <div class="search-box"><input type="search" placeholder="Search for questions, keywords, or topics..."></div>
+                            </div>
+
+                            <div class="layout-3 support-help-actions">
+                                <div class="card"><div class="card-body"><h3>Submit a new case to Customer Support</h3><p class="tiny muted">Ask a question or report an issue.</p><button class="btn" type="button" data-support-create-case>Create a new case</button></div></div>
+                                <div class="card"><div class="card-body"><h3>File a payment dispute</h3><p class="tiny muted">Go to invoices and choose items to dispute.</p><button class="btn">Go to invoices</button></div></div>
+                                <div class="card"><div class="card-body"><h3>Report a delay</h3><p class="tiny muted">Open In Transit Trips and choose Report delay.</p><button class="btn">Go to in transit trips</button></div></div>
+                                <div class="card"><div class="card-body"><h3>Update Insurance</h3><p class="tiny muted">Enter insurance provider information.</p><button class="btn">Update</button></div></div>
+                                <div class="card"><div class="card-body"><h3>File a performance dispute</h3><p class="tiny muted">Navigate to Performance details and select load.</p><button class="btn">Go to Performance</button></div></div>
+                            </div>
+
+                            <h2 class="support-title support-faq-title">Frequently asked questions</h2>
+                            <div class="tabs support-faq-tabs">
+                                <button class="tab active" type="button">Top FAQs</button>
+                                <button class="tab" type="button">Insurance and Compliance</button>
+                                <button class="tab" type="button">Load Board</button>
+                                <button class="tab" type="button">Payments and Invoicing</button>
+                                <button class="tab" type="button">Performance</button>
+                            </div>
+                            <ul class="faq-list">
+                                <li>Who is my carrier manager?</li>
+                                <li>Where can I find learning material for Relay?</li>
+                                <li>When will I receive my invoice and get paid?</li>
+                                <li>How do I report issues with sign-in to an Amazon Relay account?</li>
+                                <li>How can I report suspicious activity within the Amazon Relay network?</li>
+                                <li>What is an Amazon Freight Partner (AFP)?</li>
+                            </ul>
+                            <div class="support-faq-link"><a href="#">View all FAQs &#8594;</a></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="support-pane-learning" class="support-pane" hidden>
+                    <div class="support-learning-layout">
+                        <aside class="support-learning-summary card">
+                            <div class="card-body">
+                                <div class="support-learning-badge">&#x1F6E1;</div>
+                                <div class="support-learning-score"><strong>31</strong> Completed</div>
+                                <a href="#" class="support-learning-link">View completed</a>
+                                <div class="support-learning-assigned"><strong>1</strong> Assigned / no due date</div>
+                            </div>
+                        </aside>
+                        <section class="support-learning-assigned card">
+                            <div class="card-body">
+                                <h2>Assigned training (1)</h2>
+                                <article class="support-assigned-item">
+                                    <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=240&h=150&fit=crop" alt="Course preview">
+                                    <div class="support-assigned-copy">
+                                        <h3>Avoid Hours of Service Violations</h3>
+                                        <p>6min &nbsp;&nbsp; Performance</p>
+                                        <p>This course provides best practices to avoid Hours of Service, or HOS, related rejections.</p>
+                                        <p><strong>In progress</strong> &nbsp; No due date</p>
+                                    </div>
+                                    <button class="btn btn-primary" type="button">View</button>
+                                </article>
+                            </div>
+                        </section>
+                    </div>
+
+                    <section class="support-learning-courses">
+                        <h2>Available courses</h2>
+                        <div class="support-course-cats">
+                            <button class="support-chip active" type="button">All (180)</button>
+                            <button class="support-chip" type="button">Safety and Compliance (50)</button>
+                            <button class="support-chip" type="button">Media and Events (55)</button>
+                            <button class="support-chip" type="button">Carrier Experience (18)</button>
+                            <button class="support-chip" type="button">Guides (18)</button>
+                            <button class="support-chip" type="button">Maintenance (22)</button>
+                            <button class="support-chip" type="button">Relay App (7)</button>
+                            <button class="support-chip" type="button">Performance (24)</button>
+                        </div>
+                        <div class="support-course-grid">
+                            <article class="support-course-card"><div class="support-course-media media-one"></div><div class="support-course-body"><h3>Staying Alert on the Road: Hidden Distractions</h3><p>3min &nbsp; Safety and Compliance</p><button class="btn" type="button">+ Assign to me</button></div></article>
+                            <article class="support-course-card"><div class="support-course-media media-two"></div><div class="support-course-body"><h3>Amazon Relay Roadway Series - Episode 1</h3><p>38min &nbsp; Media and Events</p><button class="btn" type="button">+ Assign to me</button></div></article>
+                            <article class="support-course-card"><div class="support-course-media media-three"></div><div class="support-course-body"><h3>Preventing Phone Distractions - Microlearning</h3><p>3min &nbsp; Safety and Compliance</p><button class="btn" type="button">+ Assign to me</button></div></article>
+                            <article class="support-course-card"><div class="support-course-media media-four"></div><div class="support-course-body"><h3>Trip Map Guide</h3><p>2min &nbsp; Carrier Experience, Guides</p><button class="btn" type="button">+ Assign to me</button></div></article>
+                            <article class="support-course-card"><div class="support-course-media media-five"></div><div class="support-course-body"><h3>Build your dream team: Tap into military talent</h3><p>31min &nbsp; Media and Events</p><button class="btn" type="button">+ Assign to me</button></div></article>
+                            <article class="support-course-card"><div class="support-course-media media-six"></div><div class="support-course-body"><h3>Best Practices for Avoiding Bridge Strikes</h3><p>15min &nbsp; Safety and Compliance</p><button class="btn" type="button">+ Assign to me</button></div></article>
+                            <article class="support-course-card"><div class="support-course-media media-seven"></div><div class="support-course-body"><h3>90-Second Garage: How to Charge Your Battery Like a Pro</h3><p>2min &nbsp; Maintenance</p><button class="btn" type="button">+ Assign to me</button></div></article>
+                            <article class="support-course-card"><div class="support-course-media media-eight"></div><div class="support-course-body"><h3>Carrier Insurance Guide</h3><p>4min &nbsp; Guides</p><button class="btn" type="button">+ Assign to me</button></div></article>
+                            <article class="support-course-card"><div class="support-course-media media-nine"></div><div class="support-course-body"><h3>Amazon Relay Roadway Series - Episode 4</h3><p>44min &nbsp; Media and Events</p><button class="btn" type="button">+ Assign to me</button></div></article>
+                            <article class="support-course-card"><div class="support-course-media media-ten"></div><div class="support-course-body"><h3>Guide to Relay Feedback</h3><p>1min &nbsp; Relay App</p><button class="btn" type="button">+ Assign to me</button></div></article>
+                        </div>
+                        <div class="support-pagination"><button type="button">&#8249;</button><button type="button" class="active">1</button><button type="button">2</button><button type="button">3</button><span>&#8230;</span><button type="button">16</button><button type="button">17</button><button type="button">18</button><button type="button">&#8250;</button></div>
+                    </section>
+                </section>
+
+                <section id="support-pane-open" class="support-pane" hidden>
+                    <div class="support-cases-toolbar">
+                        <input type="text" placeholder="Case ID" aria-label="Case ID" data-support-case-search>
+                        <button type="button" class="btn" data-support-view-case>View case</button>
+                        <button type="button" class="btn btn-primary" data-support-create-case>Create new</button>
+                    </div>
+                    <h2 class="support-closed-title" data-support-open-title>0 open issues</h2>
+                    <table class="data-table support-closed-table support-open-table" data-support-open-table hidden>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Subject</th>
+                                <th>Created at</th>
+                                <th>Last updated</th>
+                            </tr>
+                        </thead>
+                        <tbody data-support-open-body></tbody>
+                    </table>
+                    <p class="support-empty" data-support-open-empty>No open issues</p>
+                </section>
+
+                <section id="support-pane-closed" class="support-pane" hidden>
+                    <div class="support-cases-toolbar">
+                        <input type="text" placeholder="Case ID" aria-label="Case ID" data-support-case-search>
+                        <button type="button" class="btn">View case</button>
+                        <button type="button" class="btn btn-primary" data-support-create-case>Create new</button>
+                    </div>
+                    <h2 class="support-closed-title">76 recently closed issues</h2>
+                    <table class="data-table support-closed-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Subject</th>
+                                <th>Created at</th>
+                                <th>Last updated</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>S-Q7M2AR9KC</td><td>The user is reporting a timestamp issue for drop off at the BWI4 location for load 11Q8M4N2A.</td><td>11:39 EST</td><td>11:50 EST</td></tr>
+                            <tr><td>S-L9C4XQ7TD</td><td>The user is reporting that the container for load 11R6C8L2P is not ready.</td><td>Feb 13</td><td>Feb 13</td></tr>
+                            <tr><td>S-A5N8VJ2RM</td><td>The user is reporting an issue with container location for load 11R6C8L2P.</td><td>Feb 13</td><td>Feb 13</td></tr>
+                            <tr><td>S-H3P7KX6LA</td><td>The user needs a container number for load 11R6C8L2P.</td><td>Feb 13</td><td>Feb 13</td></tr>
+                            <tr><td>S-M8T2BQ5YN</td><td>The user is requesting a waybill number for load 11K7P3D9M.</td><td>Feb 13</td><td>Feb 13</td></tr>
+                            <tr><td>S-R4D9LM6VC</td><td>The user is reporting that the trailer for load 11N2V6X4R is not ready.</td><td>Feb 10</td><td>Feb 10</td></tr>
+                            <tr><td>S-V6G3NA8KP</td><td>The user is inquiring about the empty trailer type for load 11B5T8H3K. After several attempts to clarify the issue, the system was unable to determine the specific request, and the user opted to proceed with filing a support case.</td><td>Feb 4</td><td>Feb 4</td></tr>
+                            <tr><td>S-K2X8PD4QF</td><td>The user is requesting the waybill number for load 11F9A2Q7C.</td><td>Feb 4</td><td>Feb 4</td></tr>
+                            <tr><td>S-T5R1WM9ZA</td><td>The user is requesting a waybill number for load 11D3M8R6J.</td><td>Feb 3</td><td>Feb 3</td></tr>
+                            <tr><td>S-B9L6CY2VH</td><td>The user is requesting a waybill number for load 11L4K7S2B.</td><td>Feb 2</td><td>Feb 2</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="support-closed-footer">
+                        <a href="#">Contact Us to inquire about cases closed over 6 months ago</a>
+                        <button type="button">Next Page &#8250;</button>
+                    </div>
+                </section>
+
+                <section id="support-pane-attention" class="support-pane" hidden>
+                    <div class="support-cases-toolbar">
+                        <input type="text" placeholder="Case ID" aria-label="Case ID" data-support-case-search>
+                        <button type="button" class="btn">View case</button>
+                        <button type="button" class="btn btn-primary" data-support-create-case>Create new</button>
+                    </div>
+                    <p class="support-empty">No open issues requiring your immediate attention</p>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = Array.from(document.querySelectorAll('.support-tab[data-target]'));
+            const panes = Array.from(document.querySelectorAll('.support-pane'));
+
+            const activatePane = (targetId) => {
+                tabs.forEach((tab) => {
+                    const isActive = tab.dataset.target === targetId;
+                    tab.classList.toggle('active', isActive);
+                    tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+                panes.forEach((pane) => {
+                    const active = pane.id === targetId;
+                    pane.hidden = !active;
+                    pane.classList.toggle('support-pane-active', active);
+                });
+            };
+
+            tabs.forEach((tab) => {
+                tab.addEventListener('click', () => activatePane(tab.dataset.target));
+            });
+        });
+    </script>
+    <script src="supportcenter.js"></script>
+    <script src="ai-teacher.js"></script>
+
+</html>
+

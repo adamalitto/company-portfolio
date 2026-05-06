@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trips</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="relay-screens.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="https://dfz3xbn3chdu5.cloudfront.net/OptimusWebPlatform/img/Relay_Logo._V516635218_.svg" class="optimus-relay-logo__image">
+                <h2>Future Logistics Academy</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="notification.html">Notifications</a></li>
+                    <li><a href="trips.html" class="active-page">Trips</a></li>
+                    <li><a href="loadboard.html">Load Board</a></li>
+                    <li><a href="auctions.html">Auctions</a></li>
+                    <li><a href="equipmentmarketplace.html">Equipment Marketplace</a></li>
+                    <li><a href="contracts.html">Contracts</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle managing-resources-toggle">Managing Resources 
+                            <span class="arrow">&#9660;</span>
+                        </a>
+                        <ul class="dropdown-menu managing-resources-dropdown">
+                            <li><a href="driverroster.html">Driver Roster</a></li>                            <li><a href="assets.html">Assets</a></li>
+                        </ul>
+                    </li> 
+                    <li><a href="scorecard.html">Scorecard</a></li>
+                    <li><a href="learningcenter.html">Learning Center</a></li>
+                    <li><a href="rewards.html">Rewards</a></li>
+                    <li><a href="payments.html">Payments</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle carrier-accounts-toggle">Carrier Account
+                            <span class="arrow">&#9660;</span>
+                        </a>
+                        <ul class="dropdown-menu carrier-accounts-dropdown">
+                            <li><a href="companyprofile.html">Company Profile</a></li>
+                            <li><a href="documents.html">Documents</a></li>
+                            <li><a href="paymentinfo.html">Payment Info</a></li>
+                            <li><a href="siteusers.html">Site Users</a></li>
+                        </ul>
+                    </li>                  
+                </ul>
+            </nav>
+            <footer>
+                <a href="supportcenter.html">Support Center</a><br>
+                <a href="userprofile.html">User Profile</a><br>
+                <a href="userprofile.html#feedback">Give Feedback</a><br>
+                <a href="../index.html">Sign out</a>
+            </footer>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content trips-page">
+            <!-- Top Navigation Bar -->
+            <div class="top-bar-fullwidth">
+                <header class="top-bar">
+                    <div class="breadcrumb-container">
+                        <!-- Hamburger Icon on the Left of Dashboard/Trips -->
+                        <div class="hamburger-icon" id="hamburger-icon">
+                            &#9776;
+                        </div>
+                        <div class="breadcrumb">Trips</div>
+                    </div>
+                                        <div class="top-icons" aria-label="Header shortcuts">
+                        <span class="relay-header-icon icon-tick" title="Checklist" aria-label="Checklist">&#9745;</span>
+                        <span class="relay-header-icon icon-bell relay-bell-wrap" title="Notifications" aria-label="Notifications">&#128276;<span class="badge-number">233</span></span>
+                        <span class="relay-header-icon icon-help" title="Help" aria-label="Help">?</span>
+                    </div>
+                </header>
+
+                <!-- Trips Section Header -->
+                <div class="trips-header">
+                    <h1>Trips</h1>
+                </div>
+            </div>
+            <div class="page-shell">
+                <div class="trips-console">
+                    <div class="trips-toolbar">
+                        <div class="trip-tabs" role="tablist" aria-label="Trips tabs">
+                            <button class="trip-tab active" type="button" data-trip-tab="upcoming" aria-selected="true">Upcoming</button>
+                            <button class="trip-tab" type="button" data-trip-tab="in-transit" aria-selected="false">In Transit</button>
+                            <button class="trip-tab" type="button" data-trip-tab="history" aria-selected="false">History</button>
+                        </div>
+                        <button class="trip-advanced-link" id="trip-advanced-search-toggle" type="button" aria-expanded="false">&#128269; Advanced Search</button>
+                    </div>
+
+                    <section class="trip-advanced-state" id="trip-advanced-search-panel" hidden>
+                        <form class="trip-advanced-form" id="trip-advanced-search-form">
+                            <h2>Advanced Search</h2>
+
+                            <label class="trip-advanced-keyword">
+                                <span>Keyword</span>
+                                <textarea data-advanced-keyword placeholder="Trip ID or Load ID/VRID or Block ID (up to 1000)"></textarea>
+                            </label>
+
+                            <fieldset class="trip-advanced-fieldset">
+                                <legend>Trip stage</legend>
+                                <label><input type="checkbox" data-advanced-stage value="upcoming"> <span>Upcoming</span></label>
+                                <label><input type="checkbox" data-advanced-stage value="in-transit"> <span>In Transit</span></label>
+                                <label><input type="checkbox" data-advanced-stage value="completed"> <span>Completed</span></label>
+                                <label><input type="checkbox" data-advanced-stage value="rejected"> <span>Rejected</span></label>
+                            </fieldset>
+
+                            <div class="trip-advanced-row">
+                                <select data-advanced-work-type aria-label="Work types">
+                                    <option value="">Work types</option>
+                                    <option value="round-trip">Round trip</option>
+                                    <option value="one-way">One way</option>
+                                </select>
+                            </div>
+
+                            <div class="trip-advanced-row trip-advanced-row-two">
+                                <select data-advanced-max-distance aria-label="Max distance">
+                                    <option value="" selected hidden>Max. distance</option>
+                                    <option value="">No selection</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                    <option value="150">150</option>
+                                    <option value="200">200</option>
+                                    <option value="250">250</option>
+                                    <option value="300">300</option>
+                                    <option value="350">350</option>
+                                    <option value="400">400</option>
+                                    <option value="450">450</option>
+                                    <option value="500">500</option>
+                                    <option value="500-plus">500+</option>
+                                </select>
+                                <select data-advanced-stops aria-label="Stops">
+                                    <option value="" selected hidden>Stops</option>
+                                    <option value="">No selection</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5-plus">5+</option>
+                                </select>
+                            </div>
+
+                            <fieldset class="trip-advanced-fieldset trip-advanced-date-fieldset">
+                                <legend>Trips starting between</legend>
+                                <div class="trip-advanced-date-grid">
+                                    <label class="trip-advanced-start-date">
+                                        <span>Start date</span>
+                                        <input type="date" data-advanced-start-date value="2026-01-26">
+                                    </label>
+                                    <label class="trip-advanced-start-time">
+                                        <span>Start time</span>
+                                        <input type="time" data-advanced-start-time value="04:00">
+                                    </label>
+                                    <label class="trip-advanced-end-date">
+                                        <span>End date</span>
+                                        <input type="date" data-advanced-end-date value="2026-07-26">
+                                    </label>
+                                    <label class="trip-advanced-end-time">
+                                        <span>End time</span>
+                                        <input type="time" data-advanced-end-time value="04:00">
+                                    </label>
+                                    <select class="trip-advanced-timezone" data-advanced-timezone aria-label="Timezone">
+                                        <option value="America/New_York">America/New_York</option>
+                                        <option value="America/Chicago">America/Chicago</option>
+                                        <option value="America/Denver">America/Denver</option>
+                                        <option value="America/Los_Angeles">America/Los_Angeles</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="trip-advanced-fieldset">
+                                <legend>Location</legend>
+                                <div class="trip-advanced-row trip-advanced-row-two">
+                                    <select data-advanced-location-type aria-label="Location type">
+                                        <option value="starting">Starting location</option>
+                                        <option value="ending">Ending location</option>
+                                        <option value="any">Any trip location</option>
+                                    </select>
+                                    <input type="text" data-advanced-facility placeholder="Facility code">
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="trip-advanced-fieldset">
+                                <legend>Driver</legend>
+                                <label><input type="radio" name="advanced-driver" data-advanced-driver value="any" checked> <span>Any Assignment</span></label>
+                                <label><input type="radio" name="advanced-driver" data-advanced-driver value="unassigned"> <span>Unassigned</span></label>
+                                <label><input type="radio" name="advanced-driver" data-advanced-driver value="assigned"> <span>Assigned</span></label>
+                            </fieldset>
+
+                            <div class="trip-advanced-actions">
+                                <button class="trip-advanced-search-button" type="submit">Search</button>
+                                <button class="trip-advanced-reset-button" type="button" id="trip-advanced-reset">Reset</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="trip-state active" data-trip-state="upcoming">
+                        <button class="trip-inline-link trip-search-again" type="button" data-trip-search-again hidden>&#8592; Search again</button>
+                        <button class="trip-inline-link" type="button">&#8250; Calendar</button>
+
+                        <div class="trip-filter-grid trip-filter-grid-upcoming">
+                            <label class="trip-search-field">
+                                <span>&#128269;</span>
+                                <input type="search" placeholder="Search by IDs, location, drivers" data-trip-search="upcoming">
+                            </label>
+                            <select data-trip-filter-state="upcoming" data-trip-filter="domicile" aria-label="Domiciles">
+                                <option value="">Domiciles</option>
+                                <option value="BWI">BWI</option>
+                            </select>
+                            <select data-trip-filter-state="upcoming" data-trip-filter="disruption" aria-label="Disruptions">
+                                <option value="">Disruptions</option>
+                                <option value="unassigned">Unassigned</option>
+                                <option value="delayed">Delayed</option>
+                                <option value="delay-reported">Delay reported</option>
+                            </select>
+                            <select data-trip-filter-state="upcoming" data-trip-filter="workType" aria-label="Work types">
+                                <option value="">Work types</option>
+                                <option value="round-trip">Round trip</option>
+                                <option value="one-way">One way</option>
+                            </select>
+                            <select data-trip-filter-state="upcoming" data-trip-filter="program" aria-label="Programs">
+                                <option value="">Programs</option>
+                                <option value="contracts">Contracts</option>
+                            </select>
+                        </div>
+
+                        <div class="trip-row trip-row-utility">
+                            <label class="trip-toggle">
+                                <input type="checkbox" data-trip-needs-attention="upcoming">
+                                <span>Show needs attention only</span>
+                            </label>
+                        </div>
+
+                        <div class="trip-row trip-row-meta">
+                            <div class="trip-results-meta"><span id="upcoming-trip-results-count">0-0 of 0 results</span> <button type="button" id="upcoming-clear-filters">Clear filters</button></div>
+                            <div class="trip-results-actions">
+                                <button type="button">Export</button>
+                                <button type="button" id="upcoming-bulk-assign">Bulk assign</button>
+                                <button type="button">Accept all</button>
+                                <div class="trip-sort-control" data-trip-sort-control>
+                                    <span>Sort by</span>
+                                    <button class="trip-sort-trigger" id="upcoming-sort-trigger" type="button" aria-haspopup="menu" aria-expanded="false">
+                                        <span id="upcoming-sort-label">Start date</span>
+                                    </button>
+                                    <div class="trip-sort-menu" id="upcoming-sort-menu" role="menu" hidden>
+                                        <button type="button" role="menuitem" data-upcoming-sort="expiration-nearest"><span>Expiration</span><span>Nearest</span></button>
+                                        <button type="button" role="menuitem" data-upcoming-sort="expiration-farthest"><span>Expiration</span><span>Farthest</span></button>
+                                        <button type="button" role="menuitem" data-upcoming-sort="start-nearest"><span>Start date</span><span>Nearest</span></button>
+                                        <button type="button" role="menuitem" data-upcoming-sort="start-farthest"><span>Start date</span><span>Farthest</span></button>
+                                        <button type="button" role="menuitem" data-upcoming-sort="payout-lowest"><span>Payout</span><span>Lowest</span></button>
+                                        <button type="button" role="menuitem" data-upcoming-sort="payout-highest"><span>Payout</span><span>Highest</span></button>
+                                        <button type="button" role="menuitem" data-upcoming-sort="driver-asc"><span>Driver ID</span><span>Asc</span></button>
+                                        <button type="button" role="menuitem" data-upcoming-sort="driver-desc"><span>Driver ID</span><span>Desc</span></button>
+                                        <button type="button" role="menuitem" data-upcoming-sort="stops-fewest"><span>Stops</span><span>Fewest</span></button>
+                                        <button type="button" role="menuitem" data-upcoming-sort="stops-most"><span>Stops</span><span>Most</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trip-table-frame" id="upcoming-trip-frame">
+                            <div class="trip-upcoming-list" id="upcoming-trip-list"></div>
+                            <div class="trip-empty-card" id="upcoming-empty-card">
+                                <h3>No trip to show</h3>
+                                <img src="Truck.jpg" alt="No trip to show">
+                            </div>
+                        </div>
+
+                        <div class="trip-pagination" aria-label="Upcoming pagination" id="upcoming-trip-pagination">
+                            <button type="button">&#171;</button>
+                            <button type="button">&#8249;</button>
+                            <span>Previous</span>
+                            <span>1</span>
+                            <span>Next</span>
+                            <button type="button">&#8250;</button>
+                        </div>
+                    </section>
+
+                    <section class="trip-state" data-trip-state="in-transit">
+                        <button class="trip-inline-link trip-search-again" type="button" data-trip-search-again hidden>&#8592; Search again</button>
+                        <div class="trip-filter-grid trip-filter-grid-upcoming">
+                            <label class="trip-search-field">
+                                <span>&#128269;</span>
+                                <input type="search" placeholder="Search by IDs, location, drivers" data-trip-search="in-transit">
+                            </label>
+                            <select data-trip-filter-state="in-transit" data-trip-filter="domicile" aria-label="Domiciles">
+                                <option value="">Domiciles</option>
+                                <option value="BWI">BWI</option>
+                            </select>
+                            <select data-trip-filter-state="in-transit" data-trip-filter="disruption" aria-label="Disruptions">
+                                <option value="">Disruptions</option>
+                                <option value="unassigned">Unassigned</option>
+                                <option value="delayed">Delayed</option>
+                                <option value="delay-reported">Delay reported</option>
+                            </select>
+                            <select data-trip-filter-state="in-transit" data-trip-filter="workType" aria-label="Work types">
+                                <option value="">Work types</option>
+                                <option value="round-trip">Round trip</option>
+                                <option value="one-way">One way</option>
+                            </select>
+                            <select data-trip-filter-state="in-transit" data-trip-filter="program" aria-label="Programs">
+                                <option value="">Programs</option>
+                                <option value="contracts">Contracts</option>
+                            </select>
+                        </div>
+
+                        <div class="trip-row trip-row-utility">
+                            <div class="trip-view-toggle">
+                                <button type="button" class="active">List</button>
+                                <button type="button">Map</button>
+                            </div>
+                            <label class="trip-toggle">
+                                <input type="checkbox" data-trip-needs-attention="in-transit">
+                                <span>Show needs attention only</span>
+                            </label>
+                        </div>
+
+                        <div class="trip-row trip-row-meta">
+                            <div class="trip-results-meta"><span id="in-transit-trip-results-count">0-0 of 0 results</span></div>
+                            <div class="trip-results-actions">
+                                <button type="button">Export</button>
+                                <span>Sort by <button type="button">Start date</button></span>
+                            </div>
+                        </div>
+
+                        <div class="trip-table-frame" id="in-transit-trip-frame">
+                            <div class="trip-upcoming-list" id="in-transit-trip-list"></div>
+                            <div class="trip-empty-card" id="in-transit-empty-card">
+                                <h3>No trip to show</h3>
+                                <img src="Truck.jpg" alt="No trip to show">
+                            </div>
+                        </div>
+
+                        <div class="trip-pagination" aria-label="In transit pagination">
+                            <button type="button">&#171;</button>
+                            <button type="button">&#8249;</button>
+                            <span>Previous</span>
+                            <span>1</span>
+                            <span>Next</span>
+                            <button type="button">&#8250;</button>
+                        </div>
+                    </section>
+
+                    <section class="trip-state" data-trip-state="history">
+                        <button class="trip-inline-link trip-search-again" type="button" data-trip-search-again hidden>&#8592; Search again</button>
+                        <div class="trip-filter-grid trip-filter-grid-history">
+                            <label class="trip-search-field">
+                                <span>&#128269;</span>
+                                <input type="search" placeholder="Search by IDs, location, drivers" data-trip-search="history">
+                            </label>
+                            <div class="trip-date-range">
+                                <button type="button" id="history-week-prev" aria-label="Previous history week">&#8249;</button>
+                                <span id="history-week-label">--</span>
+                                <button type="button" id="history-week-next" aria-label="Next history week">&#8250;</button>
+                            </div>
+                            <select data-trip-filter-state="history" data-trip-filter="domicile" aria-label="Domiciles">
+                                <option value="">Domiciles</option>
+                                <option value="BWI">BWI</option>
+                            </select>
+                            <select data-trip-filter-state="history" data-trip-filter="disruption" aria-label="Disruptions">
+                                <option value="">Disruptions</option>
+                                <option value="unassigned">Unassigned</option>
+                                <option value="delayed">Delayed</option>
+                                <option value="delay-reported">Delay reported</option>
+                            </select>
+                            <select data-trip-filter-state="history" data-trip-filter="workType" aria-label="Work types">
+                                <option value="">Work types</option>
+                                <option value="round-trip">Round trip</option>
+                                <option value="one-way">One way</option>
+                            </select>
+                            <select data-trip-filter-state="history" data-trip-filter="program" aria-label="Programs">
+                                <option value="">Programs</option>
+                                <option value="contracts">Contracts</option>
+                            </select>
+                        </div>
+
+                        <div class="trip-row trip-row-utility">
+                            <button class="trip-inline-link" type="button">&#8250; More filters</button>
+                            <label class="trip-toggle">
+                                <input type="checkbox" data-trip-needs-attention="history">
+                                <span>Show needs attention only</span>
+                            </label>
+                        </div>
+
+                        <div class="trip-row trip-row-meta">
+                            <div class="trip-results-meta"><span id="history-trip-results-count">0-0 of 0 results</span></div>
+                            <div class="trip-results-actions">
+                                <button type="button">Export</button>
+                                <span>Sort by <button type="button">Start date</button></span>
+                            </div>
+                        </div>
+
+                        <div class="trip-table-frame" id="history-trip-frame">
+                            <div class="trip-upcoming-list" id="history-trip-list"></div>
+                            <div class="trip-empty-card" id="history-empty-card">
+                                <h3>No trip to show</h3>
+                                <img src="Truck.jpg" alt="No trip to show">
+                            </div>
+                        </div>
+
+                        <div class="trip-pagination" aria-label="History pagination">
+                            <button type="button">&#171;</button>
+                            <button type="button">&#8249;</button>
+                            <span>Previous</span>
+                            <span>1</span>
+                            <span>Next</span>
+                            <button type="button">&#8250;</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="assets-data.js"></script>
+    <script src="payment-schedule.js"></script>
+    <script src="trip-history-schedule.js"></script>
+    <script src="trips.js"></script>
+    <script src="ai-teacher.js"></script>
+
+</html>
+
+
+
