@@ -68,6 +68,9 @@ Must remain configured at edge via `vercel.json`:
 - `Cross-Origin-Resource-Policy`
 - `X-Robots-Tag`
 
+Compatibility note:
+- Keep advanced isolation/cache overrides (`Cross-Origin-Embedder-Policy`, `Origin-Agent-Cluster`, global `Cache-Control: no-store`) optional unless there is a strict requirement, because they can reduce third-party integration compatibility and caching performance.
+
 ## 6) Incident Response
 
 If unauthorized change is detected:

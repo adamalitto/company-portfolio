@@ -108,6 +108,11 @@
     contactTaxValue: "306714958",
     contactOkedLabel: "OKED:",
     contactOkedValue: "96120",
+    directContactAria: "Direct contact options",
+    directContactTitle: "Direct Contact",
+    directContactBody: "For security reasons, online form submissions are disabled. Please contact us directly:",
+    directContactEmail: "Email Us",
+    directContactCall: "Call Us",
     formName: "Full name",
     formEmail: "Work email",
     formMessage: "Project details",
@@ -222,6 +227,11 @@
     contactTaxValue: "306714958",
     contactOkedLabel: "OKED:",
     contactOkedValue: "96120",
+    directContactAria: "To'g'ridan-to'g'ri aloqa variantlari",
+    directContactTitle: "To'g'ridan-to'g'ri aloqa",
+    directContactBody: "Xavfsizlik sababli onlayn forma yuborish o'chirilgan. Iltimos, biz bilan to'g'ridan-to'g'ri bog'laning:",
+    directContactEmail: "Email yozish",
+    directContactCall: "Qo'ng'iroq qilish",
     formName: "F.I.Sh.",
     formEmail: "Ishchi email",
     formMessage: "Loyiha tafsilotlari",
@@ -336,6 +346,11 @@
     contactTaxValue: "306714958",
     contactOkedLabel: "ОКЭД:",
     contactOkedValue: "96120",
+    directContactAria: "Варианты прямого контакта",
+    directContactTitle: "Прямой контакт",
+    directContactBody: "По соображениям безопасности отправка онлайн-форм отключена. Пожалуйста, свяжитесь с нами напрямую:",
+    directContactEmail: "Написать email",
+    directContactCall: "Позвонить",
     formName: "ФИО",
     formEmail: "Рабочий email",
     formMessage: "Детали проекта",
@@ -610,6 +625,13 @@ function applyLanguage(lang) {
     const key = element.getAttribute("data-lang");
     if (dictionary[key]) {
       element.textContent = dictionary[key];
+    }
+  });
+
+  document.querySelectorAll("[data-lang-aria-label]").forEach((element) => {
+    const key = element.getAttribute("data-lang-aria-label");
+    if (dictionary[key]) {
+      element.setAttribute("aria-label", dictionary[key]);
     }
   });
 
